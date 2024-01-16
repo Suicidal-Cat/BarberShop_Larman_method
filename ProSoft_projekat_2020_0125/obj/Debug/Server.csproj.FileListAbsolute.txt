@@ -1,0 +1,15 @@
+C:\Users\darek\Desktop\Server\ProSoft_projekat_2020_0125\bin\Debug\ProSoft_projekat_2020_0125.exe.config
+C:\Users\darek\Desktop\Server\ProSoft_projekat_2020_0125\bin\Debug\ProSoft_projekat_2020_0125.exe
+C:\Users\darek\Desktop\Server\ProSoft_projekat_2020_0125\bin\Debug\ProSoft_projekat_2020_0125.pdb
+C:\Users\darek\Desktop\Server\ProSoft_projekat_2020_0125\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\darek\Desktop\Server\ProSoft_projekat_2020_0125\obj\Debug\ProSoft_projekat_2020_0125.FRMServer.resources
+C:\Users\darek\Desktop\Server\ProSoft_projekat_2020_0125\obj\Debug\ProSoft_projekat_2020_0125.Properties.Resources.resources
+C:\Users\darek\Desktop\Server\ProSoft_projekat_2020_0125\obj\Debug\Server.csproj.GenerateResource.cache
+C:\Users\darek\Desktop\Server\ProSoft_projekat_2020_0125\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\darek\Desktop\Server\ProSoft_projekat_2020_0125\obj\Debug\ProSoft_projekat_2020_0125.exe
+C:\Users\darek\Desktop\Server\ProSoft_projekat_2020_0125\obj\Debug\ProSoft_projekat_2020_0125.pdb
+C:\Users\darek\Desktop\Server\ProSoft_projekat_2020_0125\bin\Debug\Common.dll
+C:\Users\darek\Desktop\Server\ProSoft_projekat_2020_0125\bin\Debug\DBBroker.dll
+C:\Users\darek\Desktop\Server\ProSoft_projekat_2020_0125\bin\Debug\Common.pdb
+C:\Users\darek\Desktop\Server\ProSoft_projekat_2020_0125\bin\Debug\DBBroker.pdb
+C:\Users\darek\Desktop\Server\ProSoft_projekat_2020_0125\obj\Debug\Server.csproj.CopyComplete
