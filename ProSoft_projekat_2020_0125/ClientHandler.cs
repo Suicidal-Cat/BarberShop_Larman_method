@@ -51,8 +51,15 @@ namespace ProSoft_projekat_2020_0125
 				switch (req.Operation)
 				{
 					case Operation.CreateService:
+						{
+							Controller.Instance.AddService((Usluga)req.Argument);
+							res.Message = "Sistem je uspesno kreirao uslugu!";
+						}
 						break;
-					case Operation.FindService:
+					case Operation.GetAllServicesSearch:
+						{
+							res.Result = Controller.Instance.SearchAllServices();
+						}
 						break;
 					case Operation.UpdateService:
 						break;
@@ -63,10 +70,31 @@ namespace ProSoft_projekat_2020_0125
 					case Operation.CreateBarber:
 						{
 							Controller.Instance.AddBarber((Frizer)req.Argument);
-							res.Message = "Uspesno kreiran nalog frizera!";
+							res.Message = "Sistem je uspesno kreirao nalog frizera!";
+						}
+						break;
+					case Operation.GetAllBarbers:
+						break;
+					case Operation.GetAllBarbersSearch:
+						{
+							res.Result = Controller.Instance.SearchAllBarbers();
+                        }
+						break;
+					case Operation.GetAllBarbersByName:
+						{
+							res.Result = Controller.Instance.GetAllBarbersFilter((string)req.Argument);
+                        }
+						break;
+					case Operation.GetBarberById:
+						{
+							res.Result=Controller.Instance.GetBarberById((int)req.Argument);
 						}
 						break;
 					case Operation.UpdateBarber:
+						{
+							Controller.Instance.UpdateFrizer((Frizer)req.Argument);
+							res.Message = "Sistem je uspesno izmenio frizera";
+						}
 						break;
 					case Operation.MakeCustomerReservation:
 						break;

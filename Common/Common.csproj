@@ -51,6 +51,7 @@
     <Compile Include="Domain\IEntity.cs" />
     <Compile Include="Domain\Musterija.cs" />
     <Compile Include="Domain\Pol.cs" />
+    <Compile Include="Domain\Status.cs" />
     <Compile Include="Domain\Termin.cs" />
     <Compile Include="Domain\Usluga.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

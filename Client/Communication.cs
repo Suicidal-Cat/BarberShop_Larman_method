@@ -45,5 +45,50 @@ namespace Client
 			sender.Send(request);
 			return (Response)receiver.Receive();
 		}
+		public List<Frizer> GetAllBarbers()
+		{
+			Request request = new Request(Operation.GetAllBarbers, null);
+			sender.Send(request);
+			return (List<Frizer>)((Response)receiver.Receive()).Result;
+		}
+		public List<Frizer> PretraziSveFrizere()
+		{
+			Request request = new Request(Operation.GetAllBarbersSearch, null);
+			sender.Send(request);
+			return (List<Frizer>)((Response)receiver.Receive()).Result;
+		}
+
+		internal List<Frizer> PretraziPoImenuFrizere(string filter)
+		{
+			Request request = new Request(Operation.GetAllBarbersByName, filter);
+			sender.Send(request);
+            return (List<Frizer>)((Response)receiver.Receive()).Result;
+		}
+		internal Frizer NadjiFrizeraPoId(int id)
+		{
+			Request request = new Request(Operation.GetBarberById, id);
+			sender.Send(request);
+			return (Frizer)((Response)receiver.Receive()).Result;
+		}
+		internal Response IzmeniFrizera(Frizer frizer)
+		{
+			Request request = new Request(Operation.UpdateBarber,frizer);
+			sender.Send(request);
+			return (Response)receiver.Receive();
+		}
+
+		public Response DodajUslugu(Usluga frizer)
+		{
+			Request request = new Request(Operation.CreateService, frizer);
+			sender.Send(request);
+			return (Response)receiver.Receive();
+		}
+
+		internal List<Usluga> PretraziSveUsluge()
+		{
+			Request request = new Request(Operation.GetAllServicesSearch, null);
+			sender.Send(request);
+			return (List<Usluga>)((Response)receiver.Receive()).Result;
+		}
 	}
 }

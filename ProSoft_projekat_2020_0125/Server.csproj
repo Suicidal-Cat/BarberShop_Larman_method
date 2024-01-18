@@ -58,7 +58,13 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server.cs" />
-    <Compile Include="SystemOperation\KreirajNalogFrizeraSO.cs" />
+    <Compile Include="SystemOperation\SOFrizer\IzmeniFrizeraSO.cs" />
+    <Compile Include="SystemOperation\SOFrizer\KreirajNalogFrizeraSO.cs" />
+    <Compile Include="SystemOperation\SOFrizer\NadjiFrizereSO.cs" />
+    <Compile Include="SystemOperation\SOFrizer\UcitajFrizera.cs" />
+    <Compile Include="SystemOperation\SOFrizer\UcitajListuFrizeraSO.cs" />
+    <Compile Include="SystemOperation\SOUsluga\KreirajUsluguSO.cs" />
+    <Compile Include="SystemOperation\SOUsluga\UcitajListuUslugaSO.cs" />
     <Compile Include="SystemOperation\SystemOperationBase.cs" />
     <EmbeddedResource Include="FRMServer.resx">
       <DependentUpon>FRMServer.cs</DependentUpon>

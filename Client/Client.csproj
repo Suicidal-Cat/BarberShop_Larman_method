@@ -56,13 +56,33 @@
     </Compile>
     <Compile Include="GUIControllers\FrizerGUIController.cs" />
     <Compile Include="GUIControllers\MainCoordinator.cs" />
+    <Compile Include="GUIControllers\UslugaGUIController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\UCDodajFrizera.cs">
+    <Compile Include="UserControls\UCFrizer\UCSingleFrizer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UCDodajFrizera.Designer.cs">
-      <DependentUpon>UCDodajFrizera.cs</DependentUpon>
+    <Compile Include="UserControls\UCFrizer\UCSingleFrizer.Designer.cs">
+      <DependentUpon>UCSingleFrizer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCFrizer\UCIzmeniFrizera.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCFrizer\UCIzmeniFrizera.Designer.cs">
+      <DependentUpon>UCIzmeniFrizera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCMode.cs" />
+    <Compile Include="UserControls\UCUsluga\UCSearchUsluga.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCUsluga\UCSearchUsluga.Designer.cs">
+      <DependentUpon>UCSearchUsluga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCUsluga\UCSingleUsluga.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCUsluga\UCSingleUsluga.Designer.cs">
+      <DependentUpon>UCSingleUsluga.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\FRMMain.resx">
       <DependentUpon>FRMMain.cs</DependentUpon>
@@ -76,8 +96,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControls\UCDodajFrizera.resx">
-      <DependentUpon>UCDodajFrizera.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UCFrizer\UCSingleFrizer.resx">
+      <DependentUpon>UCSingleFrizer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCFrizer\UCIzmeniFrizera.resx">
+      <DependentUpon>UCIzmeniFrizera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCUsluga\UCSearchUsluga.resx">
+      <DependentUpon>UCSearchUsluga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCUsluga\UCSingleUsluga.resx">
+      <DependentUpon>UCSingleUsluga.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

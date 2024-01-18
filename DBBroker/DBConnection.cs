@@ -13,7 +13,7 @@ namespace DBBroker
         SqlConnection connection;
         SqlTransaction transaction;
         public DBConnection() {
-			connection = new SqlConnection(ConfigurationManager.ConnectionStrings["database"].ConnectionString);
+			connection = DBConnectionFactory.Instance.getConnection();
 		}
 		public void OpenConnection()
 		{

@@ -9,12 +9,17 @@ namespace Common.Communication
 	public enum Operation
 	{
 		CreateService,
+		GetAllServicesSearch,
 		FindService,
 		UpdateService,
 		DeleteService,
 		CreateCustomer,
 		CreateBarber,
+		GetAllBarbersSearch,
+		GetAllBarbersByName,
+		GetBarberById,
 		UpdateBarber,
+		GetAllBarbers,//izbrisati sve vezano za ovo,communication, controller
 		MakeCustomerReservation,
 		UpdateCustomerReservation,
 		AddBarberToReservation,

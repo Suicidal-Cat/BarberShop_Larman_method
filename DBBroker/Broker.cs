@@ -58,5 +58,47 @@ namespace DBBroker
 			cmd.ExecuteNonQuery();
 			cmd.Dispose();
 		}
+		public List<IEntity> ReadAll(IEntity entity)
+		{
+			SqlCommand cmd = connection.CreateCommand();
+			cmd.CommandText = $"SELECT * FROM {entity.TableName}";
+			SqlDataReader reader = cmd.ExecuteReader();
+			List<IEntity>entities= entity.GetReaderList(reader);
+			reader.Close();
+			cmd.Dispose();
+			return entities;
+		}
+
+		public List<IEntity> ReadAllSearch(IEntity entity)
+		{
+			SqlCommand cmd = connection.CreateCommand();
+			cmd.CommandText = $"SELECT {entity.GetSearchAttributes()} FROM {entity.TableName}";
+			SqlDataReader reader = cmd.ExecuteReader();
+			List<IEntity>entities= entity.ReadAllSearch(reader);
+			reader.Close();
+			cmd.Dispose();
+			return entities;
+		}
+
+		public List<IEntity> GetAllByFilter(IEntity entity,string filter)
+		{
+			SqlCommand cmd = connection.CreateCommand();
+			cmd.CommandText = $"SELECT {entity.GetSearchAttributes()} FROM {entity.TableName} WHERE {entity.GetFilterQuery(filter)}";
+			SqlDataReader reader = cmd.ExecuteReader();
+			List<IEntity> entities = entity.ReadAllSearch(reader);
+			reader.Close();
+			cmd.Dispose();
+            return entities;
+		}
+		public IEntity GetEntityById(IEntity entity)
+		{
+			SqlCommand cmd = connection.CreateCommand();
+			cmd.CommandText = $"SELECT * FROM {entity.TableName} WHERE {entity.GetByIDQuery()}";
+			SqlDataReader reader = cmd.ExecuteReader();
+			entity = entity.GetReaderResult(reader);
+			reader.Close();
+			cmd.Dispose();
+			return entity;
+		}
 	}
 }

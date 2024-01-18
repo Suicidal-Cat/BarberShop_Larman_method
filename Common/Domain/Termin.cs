@@ -56,5 +56,19 @@ namespace Common.Domain
 			throw new NotImplementedException();
 		}
 
+		public string GetSearchAttributes()
+		{
+			throw new NotImplementedException();
+		}
+
+		public List<IEntity> ReadAllSearch(SqlDataReader reader)
+		{
+			throw new NotImplementedException();
+		}
+
+		public string GetFilterQuery(string filter)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

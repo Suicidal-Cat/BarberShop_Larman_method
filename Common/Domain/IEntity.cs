@@ -17,5 +17,8 @@ namespace Common.Domain
 		void PrepareCommand(SqlCommand cmd);
 		string UpdateQuery();
 		string GetByIDQuery();
+		string GetSearchAttributes();
+		string GetFilterQuery(string filter);
+		List<IEntity> ReadAllSearch(SqlDataReader reader);
 	}
 }

@@ -6,9 +6,12 @@ C:\Users\darek\Desktop\Server\Client\bin\Debug\Common.pdb
 C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.csproj.AssemblyReference.cache
 C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.FRMMain.resources
 C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.Properties.Resources.resources
-C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.UserControls.UCDodajFrizera.resources
 C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.csproj.GenerateResource.cache
 C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
 C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.csproj.CopyComplete
 C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.exe
 C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.pdb
+C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.UserControls.UCIzmeniFrizera.resources
+C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.UserControls.UCSingleFrizer.resources
+C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.UserControls.UCUsluga.UCSingleUsluga.resources
+C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.UserControls.UCUsluga.UCSearchUsluga.resources

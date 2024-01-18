@@ -1,4 +1,5 @@
 ﻿using Client.GUIControllers;
+using Client.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,10 @@ namespace Client
 		public FRMMain()
 		{
 			InitializeComponent();
-			dodajFrizeraItem.Click += (s, e) => MainCoordinator.Instance.ShowAddFrizerPanel();
+			dodajFrizeraItem.Click += (s, e) => MainCoordinator.Instance.ShowFrizerPanel(UCMode.Add);
+			izmeniFrizeraItem.Click += (s, e) => MainCoordinator.Instance.ShowSearchFrizera();
+			dodajUsluguItem.Click += (s, e) => MainCoordinator.Instance.ShowUslugaPanel(UCMode.Add);
+			pretraziUslugeItem.Click += (s, e) => MainCoordinator.Instance.ShowSearchUsluge();
 		}
 		public void ChangePanel(Control control)
 		{

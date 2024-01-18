@@ -73,5 +73,29 @@ namespace Common.Domain
 			else return null;
 		}
 
+		public string GetSearchAttributes()
+		{
+			return $"IdUsluge,NazivUsluge";
+		}
+
+		public List<IEntity> ReadAllSearch(SqlDataReader reader)
+		{
+			List<IEntity> entities = new List<IEntity>();
+			while (reader.Read())
+			{
+				Usluga usluga = new Usluga()
+				{
+					IdUsluge = (int)reader["IdUsluge"],
+					NazivUsluge = (string)reader["NazivUsluge"],
+				};
+				entities.Add(usluga);
+			}
+			return entities;
+		}
+
+		public string GetFilterQuery(string filter)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
