@@ -69,8 +69,6 @@ namespace Client.GUIControllers
 			Response res=Communication.Instance.IzbrisiUslugu(usluga);
 			uCSearchUsluga.btnSearch.PerformClick();
 			MessageBox.Show(res.Message);
-
-
 		}
 
 		private void PrikaziUsluguZaIzmenu(object sender, EventArgs e)

@@ -20,11 +20,13 @@ namespace Client.GUIControllers
 		private MainCoordinator() {
 			frizerGUIController=new FrizerGUIController();
 			uslugaGUIController=new UslugaGUIController();
+			musterijaGUIController=new MusterijaGUIController();
 		}
 
 		private FRMMain frmMain;
 		private FrizerGUIController frizerGUIController;
 		private UslugaGUIController uslugaGUIController;
+		private MusterijaGUIController musterijaGUIController;
 
 		internal void ShowFRMMain()
 		{
@@ -52,6 +54,10 @@ namespace Client.GUIControllers
 		internal void ShowSearchUsluge()
 		{
 			frmMain.ChangePanel(uslugaGUIController.CreateUCSearchUsluga());
+		}
+		internal void ShowDodajMusteriju()
+		{
+			frmMain.ChangePanel(musterijaGUIController.CreateUCMusterija());
 		}
 	}
 }

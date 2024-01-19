@@ -15,3 +15,4 @@ C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.UserControls.UCIzmeniFrize
 C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.UserControls.UCSingleFrizer.resources
 C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.UserControls.UCUsluga.UCSingleUsluga.resources
 C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.UserControls.UCUsluga.UCSearchUsluga.resources
+C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.UserControls.UCMusterija.UCDodajMusteriju.resources

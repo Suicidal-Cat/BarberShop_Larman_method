@@ -35,11 +35,12 @@
 			// 
 			// btnStop
 			// 
+			this.btnStop.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnStop.Enabled = false;
-			this.btnStop.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnStop.Location = new System.Drawing.Point(64, 140);
+			this.btnStop.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnStop.Location = new System.Drawing.Point(39, 140);
 			this.btnStop.Name = "btnStop";
-			this.btnStop.Size = new System.Drawing.Size(102, 58);
+			this.btnStop.Size = new System.Drawing.Size(127, 58);
 			this.btnStop.TabIndex = 1;
 			this.btnStop.Text = " Stop";
 			this.btnStop.UseVisualStyleBackColor = true;
@@ -47,10 +48,11 @@
 			// 
 			// btnStart
 			// 
-			this.btnStart.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnStart.Location = new System.Drawing.Point(64, 58);
+			this.btnStart.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.btnStart.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnStart.Location = new System.Drawing.Point(39, 58);
 			this.btnStart.Name = "btnStart";
-			this.btnStart.Size = new System.Drawing.Size(102, 58);
+			this.btnStart.Size = new System.Drawing.Size(127, 58);
 			this.btnStart.TabIndex = 2;
 			this.btnStart.Text = " Start";
 			this.btnStart.UseVisualStyleBackColor = true;
@@ -58,12 +60,13 @@
 			// 
 			// lblServerStatus
 			// 
+			this.lblServerStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblServerStatus.AutoSize = true;
-			this.lblServerStatus.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblServerStatus.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblServerStatus.ForeColor = System.Drawing.Color.Crimson;
-			this.lblServerStatus.Location = new System.Drawing.Point(214, 118);
+			this.lblServerStatus.Location = new System.Drawing.Point(224, 113);
 			this.lblServerStatus.Name = "lblServerStatus";
-			this.lblServerStatus.Size = new System.Drawing.Size(135, 25);
+			this.lblServerStatus.Size = new System.Drawing.Size(160, 29);
 			this.lblServerStatus.TabIndex = 3;
 			this.lblServerStatus.Text = "Server is down";
 			// 

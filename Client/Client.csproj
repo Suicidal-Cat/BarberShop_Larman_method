@@ -56,6 +56,7 @@
     </Compile>
     <Compile Include="GUIControllers\FrizerGUIController.cs" />
     <Compile Include="GUIControllers\MainCoordinator.cs" />
+    <Compile Include="GUIControllers\MusterijaGUIController.cs" />
     <Compile Include="GUIControllers\UslugaGUIController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +73,12 @@
       <DependentUpon>UCIzmeniFrizera.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCMode.cs" />
+    <Compile Include="UserControls\UCMusterija\UCDodajMusteriju.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCMusterija\UCDodajMusteriju.Designer.cs">
+      <DependentUpon>UCDodajMusteriju.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCUsluga\UCSearchUsluga.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCFrizer\UCIzmeniFrizera.resx">
       <DependentUpon>UCIzmeniFrizera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCMusterija\UCDodajMusteriju.resx">
+      <DependentUpon>UCDodajMusteriju.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCUsluga\UCSearchUsluga.resx">
       <DependentUpon>UCSearchUsluga.cs</DependentUpon>

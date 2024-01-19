@@ -55,9 +55,11 @@ namespace Client.UserControls
 		}
 		internal void ResetForm()
 		{
-			txtIme.BackColor = txtPrezime.BackColor = txtBrTelfona.BackColor = cbPol.BackColor = Color.White;
+			txtIme.BackColor = txtPrezime.BackColor = cbPol.BackColor = Color.White;
 			cbStatus.BackColor = Color.White;
-			txtIme.Text = txtPrezime.Text = txtBrTelfona.Text = "";
+			txtIme.Text = txtPrezime.Text = "";
+			txtBrTelfona.Text = "+38XXXXXXXXXX";
+			txtBrTelfona.ForeColor = Color.DarkGray;
 			cbPol.SelectedIndex = -1;
 		}
 		internal void ShowMessage(string message)

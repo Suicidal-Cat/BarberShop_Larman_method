@@ -21,6 +21,7 @@ namespace Client
 			izmeniFrizeraItem.Click += (s, e) => MainCoordinator.Instance.ShowSearchFrizera();
 			dodajUsluguItem.Click += (s, e) => MainCoordinator.Instance.ShowUslugaPanel(UCMode.Add);
 			pretraziUslugeItem.Click += (s, e) => MainCoordinator.Instance.ShowSearchUsluge();
+			dodajNalogMusterijeItem.Click += (s, e) => MainCoordinator.Instance.ShowDodajMusteriju();
 		}
 		public void ChangePanel(Control control)
 		{

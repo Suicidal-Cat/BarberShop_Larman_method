@@ -84,6 +84,10 @@ namespace ProSoft_projekat_2020_0125
 						}
 						break;
 					case Operation.CreateCustomer:
+						{
+							Controller.Instance.AddCustomer((Musterija)req.Argument);
+							res.Message = "Sistem je uspesno nalog musterije!";
+						}
 						break;
 					case Operation.CreateBarber:
 						{

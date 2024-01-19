@@ -114,5 +114,11 @@ namespace Client
 			sender.Send(request);
 			return (Response)receiver.Receive();
 		}
+		public Response DoadajMusteriju(Musterija musterija)
+		{
+			Request request = new Request(Operation.CreateCustomer, musterija);
+			sender.Send(request);
+			return (Response)receiver.Receive();
+		}
 	}
 }

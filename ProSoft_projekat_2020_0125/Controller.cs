@@ -1,6 +1,7 @@
 ﻿using Common.Domain;
 using ProSoft_projekat_2020_0125.SystemOperation;
 using ProSoft_projekat_2020_0125.SystemOperation.SOFrizer;
+using ProSoft_projekat_2020_0125.SystemOperation.SOMusterija;
 using ProSoft_projekat_2020_0125.SystemOperation.SOUsluga;
 using System;
 using System.Collections.Generic;
@@ -84,6 +85,12 @@ namespace ProSoft_projekat_2020_0125
 		internal void DeleteService(Usluga u)
 		{
 			ObrisiUsluguSO so = new ObrisiUsluguSO(u);
+			so.ExecuteTemplate();
+		}
+		//customers
+		internal void AddCustomer(Musterija musterija)
+		{
+			KreirajNalogMusterijeSO so = new KreirajNalogMusterijeSO(musterija);
 			so.ExecuteTemplate();
 		}
 	}

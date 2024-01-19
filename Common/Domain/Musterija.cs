@@ -34,7 +34,7 @@ namespace Common.Domain
 		{
 			cmd.Parameters.AddWithValue("@Ime", Ime);
 			cmd.Parameters.AddWithValue("@Prezime", Prezime);
-			cmd.Parameters.AddWithValue("@DatumRodjenja", DatumRodjenja);
+			cmd.Parameters.AddWithValue("@DatumRodjenja", DatumRodjenja.ToString("yyyy-MM-dd"));
 			cmd.Parameters.AddWithValue("@BrojTelefona", BrojTelefona);
 			cmd.Parameters.AddWithValue("@Email", Email);
 		}
