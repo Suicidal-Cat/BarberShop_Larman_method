@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ProSoft_projekat_2020_0125.SystemOperation.SOFrizer
 {
-	internal class UcitajFrizera : SystemOperationBase
+	internal class UcitajFrizeraSO : SystemOperationBase
 	{
         public IEntity result { get; set; }
         public int Id { get; set; }
-        public UcitajFrizera(int id)
+        public UcitajFrizeraSO(int id)
         {
             Id = id;
         }

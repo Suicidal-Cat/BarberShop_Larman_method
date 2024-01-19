@@ -90,5 +90,29 @@ namespace Client
 			sender.Send(request);
 			return (List<Usluga>)((Response)receiver.Receive()).Result;
 		}
+		internal List<Usluga> PretraziPoImenuUsluge(string filter)
+		{
+			Request request = new Request(Operation.GetAllServicesByName, filter);
+			sender.Send(request);
+			return (List<Usluga>)((Response)receiver.Receive()).Result;
+		}
+		internal Usluga NadjiUsluguPoId(Usluga u)
+		{
+			Request request = new Request(Operation.GetServiceById, u);
+			sender.Send(request);
+			return (Usluga)((Response)receiver.Receive()).Result;
+		}
+		internal Response IzmeniUslugu(Usluga usluga)
+		{
+			Request request = new Request(Operation.UpdateService, usluga);
+			sender.Send(request);
+			return (Response)receiver.Receive();
+		}
+		internal Response IzbrisiUslugu(Usluga usluga)
+		{
+			Request request = new Request(Operation.DeleteService, usluga);
+			sender.Send(request);
+			return (Response)receiver.Receive();
+		}
 	}
 }

@@ -61,9 +61,27 @@ namespace ProSoft_projekat_2020_0125
 							res.Result = Controller.Instance.SearchAllServices();
 						}
 						break;
+					case Operation.GetAllServicesByName:
+						{
+							res.Result = Controller.Instance.GetAllServicesFilter((string)req.Argument);
+						}
+						break;
+					case Operation.GetServiceById:
+						{
+							res.Result = Controller.Instance.GetServiceById((Usluga)req.Argument);
+						}
+						break;
 					case Operation.UpdateService:
+						{
+							Controller.Instance.UpdateService((Usluga)req.Argument);
+							res.Message = "Sistem je uspesno izmenio uslugu!";
+						}
 						break;
 					case Operation.DeleteService:
+						{
+							Controller.Instance.DeleteService((Usluga)req.Argument);
+							res.Message = "Sistem je uspesno izbrisao uslugu!";
+						}
 						break;
 					case Operation.CreateCustomer:
 						break;
@@ -87,12 +105,12 @@ namespace ProSoft_projekat_2020_0125
 						break;
 					case Operation.GetBarberById:
 						{
-							res.Result=Controller.Instance.GetBarberById((int)req.Argument);
+						res.Result=Controller.Instance.GetBarberById((int)req.Argument);
 						}
 						break;
 					case Operation.UpdateBarber:
 						{
-							Controller.Instance.UpdateFrizer((Frizer)req.Argument);
+							Controller.Instance.UpdateBarber((Frizer)req.Argument);
 							res.Message = "Sistem je uspesno izmenio frizera";
 						}
 						break;

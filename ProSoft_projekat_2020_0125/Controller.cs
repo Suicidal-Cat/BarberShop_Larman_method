@@ -43,11 +43,11 @@ namespace ProSoft_projekat_2020_0125
 			return so.result.Cast<Frizer>().ToList();
 		}
 		internal Frizer GetBarberById(int id) {
-			UcitajFrizera so = new UcitajFrizera(id);
+			UcitajFrizeraSO so = new UcitajFrizeraSO(id);
 			so.ExecuteTemplate();
 			return (Frizer)so.result;
 		}
-		internal void UpdateFrizer(Frizer f)
+		internal void UpdateBarber(Frizer f)
 		{
 			IzmeniFrizeraSO so = new IzmeniFrizeraSO(f);
 			so.ExecuteTemplate();
@@ -63,6 +63,28 @@ namespace ProSoft_projekat_2020_0125
 			UcitajListuUslugaSO so = new UcitajListuUslugaSO();
 			so.ExecuteTemplate();
 			return so.result.Cast<Usluga>().ToList();
+		}
+		internal List<Usluga> GetAllServicesFilter(string filter)
+		{
+			NadjiUslugeSO so = new NadjiUslugeSO(filter);
+			so.ExecuteTemplate();
+			return so.result.Cast<Usluga>().ToList();
+		}
+		internal Usluga GetServiceById(Usluga u)
+		{
+			UcitajUsluguSO so = new UcitajUsluguSO(u);
+			so.ExecuteTemplate();
+			return (Usluga)so.result;
+		}
+		internal void UpdateService(Usluga u)
+		{
+			IzmeniUsluguSO so = new IzmeniUsluguSO(u);
+			so.ExecuteTemplate();
+		}
+		internal void DeleteService(Usluga u)
+		{
+			ObrisiUsluguSO so = new ObrisiUsluguSO(u);
+			so.ExecuteTemplate();
 		}
 	}
 }

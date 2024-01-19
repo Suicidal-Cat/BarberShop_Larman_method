@@ -30,12 +30,12 @@
 		{
 			this.listbUsluge = new System.Windows.Forms.ListBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.txtSearch = new System.Windows.Forms.TextBox();
 			this.btnSearch = new System.Windows.Forms.Button();
 			this.btnShow = new System.Windows.Forms.Button();
 			this.btnEdit = new System.Windows.Forms.Button();
 			this.btnDelete = new System.Windows.Forms.Button();
-			this.button5 = new System.Windows.Forms.Button();
+			this.btnBack = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
@@ -45,9 +45,9 @@
 			this.listbUsluge.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.listbUsluge.FormattingEnabled = true;
 			this.listbUsluge.ItemHeight = 28;
-			this.listbUsluge.Location = new System.Drawing.Point(76, 189);
+			this.listbUsluge.Location = new System.Drawing.Point(77, 181);
 			this.listbUsluge.Name = "listbUsluge";
-			this.listbUsluge.Size = new System.Drawing.Size(294, 284);
+			this.listbUsluge.Size = new System.Drawing.Size(294, 312);
 			this.listbUsluge.TabIndex = 0;
 			// 
 			// label1
@@ -55,26 +55,26 @@
 			this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(72, 101);
+			this.label1.Location = new System.Drawing.Point(73, 93);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(304, 28);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Unesite ime usluge za pretragu:";
 			// 
-			// textBox1
+			// txtSearch
 			// 
-			this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(76, 141);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(294, 35);
-			this.textBox1.TabIndex = 2;
+			this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtSearch.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtSearch.Location = new System.Drawing.Point(77, 133);
+			this.txtSearch.Name = "txtSearch";
+			this.txtSearch.Size = new System.Drawing.Size(294, 35);
+			this.txtSearch.TabIndex = 2;
 			// 
 			// btnSearch
 			// 
 			this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnSearch.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSearch.Location = new System.Drawing.Point(392, 135);
+			this.btnSearch.Location = new System.Drawing.Point(393, 130);
 			this.btnSearch.Name = "btnSearch";
 			this.btnSearch.Size = new System.Drawing.Size(148, 41);
 			this.btnSearch.TabIndex = 3;
@@ -85,7 +85,7 @@
 			// 
 			this.btnShow.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnShow.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnShow.Location = new System.Drawing.Point(392, 208);
+			this.btnShow.Location = new System.Drawing.Point(393, 200);
 			this.btnShow.Name = "btnShow";
 			this.btnShow.Size = new System.Drawing.Size(148, 65);
 			this.btnShow.TabIndex = 4;
@@ -96,7 +96,7 @@
 			// 
 			this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnEdit.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnEdit.Location = new System.Drawing.Point(392, 309);
+			this.btnEdit.Location = new System.Drawing.Point(393, 301);
 			this.btnEdit.Name = "btnEdit";
 			this.btnEdit.Size = new System.Drawing.Size(148, 52);
 			this.btnEdit.TabIndex = 5;
@@ -107,30 +107,30 @@
 			// 
 			this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnDelete.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnDelete.Location = new System.Drawing.Point(392, 403);
+			this.btnDelete.Location = new System.Drawing.Point(393, 395);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(148, 52);
 			this.btnDelete.TabIndex = 6;
 			this.btnDelete.Text = "Izbrisi";
 			this.btnDelete.UseVisualStyleBackColor = true;
 			// 
-			// button5
+			// btnBack
 			// 
-			this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.button5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button5.Location = new System.Drawing.Point(77, 479);
-			this.button5.Name = "button5";
-			this.button5.Size = new System.Drawing.Size(148, 52);
-			this.button5.TabIndex = 7;
-			this.button5.Text = "Nazad";
-			this.button5.UseVisualStyleBackColor = true;
+			this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.btnBack.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnBack.Location = new System.Drawing.Point(77, 499);
+			this.btnBack.Name = "btnBack";
+			this.btnBack.Size = new System.Drawing.Size(148, 52);
+			this.btnBack.TabIndex = 7;
+			this.btnBack.Text = "Nazad";
+			this.btnBack.UseVisualStyleBackColor = true;
 			// 
 			// label2
 			// 
 			this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(71, 37);
+			this.label2.Location = new System.Drawing.Point(71, 32);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(237, 32);
 			this.label2.TabIndex = 8;
@@ -141,12 +141,12 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.label2);
-			this.Controls.Add(this.button5);
+			this.Controls.Add(this.btnBack);
 			this.Controls.Add(this.btnDelete);
 			this.Controls.Add(this.btnEdit);
 			this.Controls.Add(this.btnShow);
 			this.Controls.Add(this.btnSearch);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.txtSearch);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.listbUsluge);
 			this.Name = "UCSearchUsluga";
@@ -160,12 +160,12 @@
 
 		internal System.Windows.Forms.ListBox listbUsluge;
 		internal System.Windows.Forms.Label label1;
-		internal System.Windows.Forms.TextBox textBox1;
+		internal System.Windows.Forms.TextBox txtSearch;
 		internal System.Windows.Forms.Button btnSearch;
 		internal System.Windows.Forms.Button btnShow;
 		internal System.Windows.Forms.Button btnEdit;
 		internal System.Windows.Forms.Button btnDelete;
-		internal System.Windows.Forms.Button button5;
+		internal System.Windows.Forms.Button btnBack;
 		internal System.Windows.Forms.Label label2;
 	}
 }

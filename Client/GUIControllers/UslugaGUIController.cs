@@ -16,6 +16,7 @@ namespace Client.GUIControllers
 		private UCSingleUsluga uCUsluga;
 		private UCSearchUsluga uCSearchUsluga;
 
+
 		internal Control CreateUCUsluga(UCMode mode, Usluga usluga = null)
 		{
 			uCUsluga = new UCSingleUsluga(mode, usluga);
@@ -26,32 +27,123 @@ namespace Client.GUIControllers
 			}
 			else if (mode == UCMode.Update || mode==UCMode.Show)
 			{
-				uCUsluga.btnSave.Click += PrikaziTrazenuUslugu;
+				uCUsluga.btnBack.Click += (s, e) => MainCoordinator.Instance.ShowSearchUsluge();
+				if (mode == UCMode.Update) uCUsluga.btnSave.Click += AzurirajUslugu;
 			}
 			return uCUsluga;
 		}
+
+		private void AzurirajUslugu(object sender, EventArgs e)
+		{
+			Usluga usluga = new Usluga
+			{
+				IdUsluge=uCUsluga.Usluga.IdUsluge,
+				NazivUsluge = uCUsluga.txtNaziv.Text.Trim(),
+				CenaUsluge = int.Parse(uCUsluga.txtCena.Text.Trim()),
+				TrajanjeUslugeUMinutima = int.Parse(uCUsluga.txtTrajanje.Text.Trim()),
+			};
+			Response res=Communication.Instance.IzmeniUslugu(usluga);
+			MessageBox.Show(res.Message);
+		}
+
 		internal Control CreateUCSearchUsluga()
 		{
 			uCSearchUsluga = new UCSearchUsluga();
-			uCSearchUsluga.Load += VratiSveUsluge;
+			uCSearchUsluga.Load +=(s,e) => VratiSveUsluge();
+			uCSearchUsluga.btnSearch.Click += PretraziPoImenuUsluge;
+			uCSearchUsluga.btnShow.Click += PrikaziTrazenuUslugu;
+			uCSearchUsluga.btnEdit.Click += PrikaziUsluguZaIzmenu;
+			uCSearchUsluga.btnDelete.Click += IzbrisiIzabranuUslugu;
+			uCSearchUsluga.btnBack.Click += (s, e) => MainCoordinator.Instance.ShowDefault();
 			return uCSearchUsluga;
 		}
 
-		private void VratiSveUsluge(object sender, EventArgs e)
+		private void IzbrisiIzabranuUslugu(object sender, EventArgs e)
+		{
+			Usluga usluga = VratiTrazenuUslugu();
+			if (usluga == null)
+			{
+				MessageBox.Show("Izaberite neku od usluga iz liste");
+				return;
+			}
+			Response res=Communication.Instance.IzbrisiUslugu(usluga);
+			uCSearchUsluga.btnSearch.PerformClick();
+			MessageBox.Show(res.Message);
+
+
+		}
+
+		private void PrikaziUsluguZaIzmenu(object sender, EventArgs e)
+		{
+			Usluga usluga = VratiTrazenuUslugu();
+			if (usluga == null)
+			{
+				MessageBox.Show("Izaberite neku od usluga iz liste");
+				return;
+			}
+			MainCoordinator.Instance.ShowUslugaPanel(UCMode.Update, usluga);
+		}
+
+		private void PrikaziTrazenuUslugu(object sender, EventArgs e)
+		{
+			Usluga usluga = VratiTrazenuUslugu();
+			if (usluga == null)
+			{
+				MessageBox.Show("Izaberite neku od usluga iz liste");
+				return;
+			}
+			MainCoordinator.Instance.ShowUslugaPanel(UCMode.Show, usluga);
+		}
+
+		private Usluga VratiTrazenuUslugu()
+		{
+			if (uCSearchUsluga.listbUsluge.SelectedItems.Count == 1)
+			{
+				string name = (string)uCSearchUsluga.listbUsluge.SelectedItem;
+				Usluga u = uCSearchUsluga.Usluge.First(usl => usl.NazivUsluge == name);
+				return Communication.Instance.NadjiUsluguPoId(u);
+
+			}
+			else
+			{
+				return null;
+			}
+		}
+
+		private void PretraziPoImenuUsluge(object sender, EventArgs e)
+		{
+			if (string.IsNullOrEmpty(uCSearchUsluga.txtSearch.Text)) VratiSveUsluge();
+			else
+			{
+				List<Usluga> usluge = Communication.Instance.PretraziPoImenuUsluge(uCSearchUsluga.txtSearch.Text);
+				if (usluge == null || usluge.Count() == 0)
+				{
+					MessageBox.Show("Sistem nije uspeo da pronadje usluge");
+					return;
+				}
+				uCSearchUsluga.Usluge = usluge;
+				uCSearchUsluga.listbUsluge.Items.Clear();
+				foreach (Usluga u in usluge)
+				{
+					uCSearchUsluga.listbUsluge.Items.Add(u.NazivUsluge);
+				}
+			}
+		}
+
+		private void VratiSveUsluge()
 		{
 			List<Usluga> usluge = Communication.Instance.PretraziSveUsluge();
-			if (usluge == null || usluge.Count() == 0) MessageBox.Show("Sistem nije uspeo da pronadje usluge");
+			if (usluge == null || usluge.Count() == 0)
+			{
+				MessageBox.Show("Sistem nije uspeo da pronadje usluge");
+				return;
+			}
 			uCSearchUsluga.Usluge = usluge;
 			uCSearchUsluga.listbUsluge.Items.Clear();
 			foreach (Usluga u in usluge)
 			{
 				uCSearchUsluga.listbUsluge.Items.Add(u.NazivUsluge);
 			}
-		}
-
-		private void PrikaziTrazenuUslugu(object sender, EventArgs e)
-		{
-			if (!ValidateUsluga()) return;
 		}
 
 		private void SacuvajUslugu(object sender, EventArgs e)

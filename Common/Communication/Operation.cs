@@ -10,6 +10,8 @@ namespace Common.Communication
 	{
 		CreateService,
 		GetAllServicesSearch,
+		GetAllServicesByName,
+		GetServiceById,
 		FindService,
 		UpdateService,
 		DeleteService,

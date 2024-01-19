@@ -108,7 +108,7 @@ namespace Common.Domain
 
 		public string GetFilterQuery(string filter)
 		{
-			return $"LOWER(Ime) LIKE CONCAT(LOWER('{filter}'),'%');";
+			return $"LOWER(Ime) LIKE CONCAT('%',LOWER('{filter}'),'%');";
 		}
 	}
 }

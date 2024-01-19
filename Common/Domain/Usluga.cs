@@ -22,7 +22,7 @@ namespace Common.Domain
 
 		public string GetByIDQuery()
 		{
-			return $"IdFrizera={IdUsluge}";
+			return $"IdUsluge={IdUsluge}";
 		}
 
 		public string GetParametres()
@@ -38,7 +38,7 @@ namespace Common.Domain
 
 		public string UpdateQuery()
 		{
-			return $"CenaUsluge='{CenaUsluge}',TrajanjeUslugeUMinutima='{TrajanjeUslugeUMinutima}'";
+			return $"NazivUsluge='{NazivUsluge}',CenaUsluge='{CenaUsluge}',TrajanjeUslugeUMinutima='{TrajanjeUslugeUMinutima}'";
 		}
 
 		public List<IEntity> GetReaderList(SqlDataReader reader)
@@ -95,7 +95,7 @@ namespace Common.Domain
 
 		public string GetFilterQuery(string filter)
 		{
-			throw new NotImplementedException();
+			return $"LOWER(NazivUsluge) LIKE CONCAT('%',LOWER('{filter}'),'%');";
 		}
 	}
 }

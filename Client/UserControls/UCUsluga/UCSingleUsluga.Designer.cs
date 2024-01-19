@@ -65,9 +65,9 @@
 			// 
 			this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnSave.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSave.Location = new System.Drawing.Point(368, 327);
+			this.btnSave.Location = new System.Drawing.Point(363, 327);
 			this.btnSave.Name = "btnSave";
-			this.btnSave.Size = new System.Drawing.Size(183, 45);
+			this.btnSave.Size = new System.Drawing.Size(197, 45);
 			this.btnSave.TabIndex = 2;
 			this.btnSave.Text = "Sacuvaj";
 			this.btnSave.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
 			// 
 			this.txtNaziv.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtNaziv.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtNaziv.Location = new System.Drawing.Point(248, 101);
+			this.txtNaziv.Location = new System.Drawing.Point(257, 101);
 			this.txtNaziv.MaxLength = 30;
 			this.txtNaziv.Name = "txtNaziv";
 			this.txtNaziv.Size = new System.Drawing.Size(303, 33);
@@ -86,7 +86,7 @@
 			// 
 			this.txtCena.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtCena.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtCena.Location = new System.Drawing.Point(248, 175);
+			this.txtCena.Location = new System.Drawing.Point(257, 175);
 			this.txtCena.Name = "txtCena";
 			this.txtCena.Size = new System.Drawing.Size(303, 33);
 			this.txtCena.TabIndex = 5;
@@ -106,7 +106,7 @@
 			// 
 			this.txtTrajanje.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtTrajanje.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtTrajanje.Location = new System.Drawing.Point(248, 250);
+			this.txtTrajanje.Location = new System.Drawing.Point(257, 250);
 			this.txtTrajanje.Name = "txtTrajanje";
 			this.txtTrajanje.Size = new System.Drawing.Size(303, 33);
 			this.txtTrajanje.TabIndex = 7;

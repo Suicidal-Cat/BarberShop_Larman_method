@@ -84,12 +84,22 @@ namespace Client.GUIControllers
 			if (!string.IsNullOrEmpty(uCIzmenaFrizera.txtSearch.Text))
 			{
 				List<Frizer> frizeri = Communication.Instance.PretraziPoImenuFrizere(uCIzmenaFrizera.txtSearch.Text);
-				uCIzmenaFrizera.prepareDgv(frizeri);
+				if (frizeri == null || frizeri.Count() == 0)
+				{
+					MessageBox.Show("Sistem nije uspeo da pronadje frizere");
+					return;
+				}
+				else uCIzmenaFrizera.prepareDgv(frizeri);
 			}
 			else
 			{
 				List<Frizer> frizeri = Communication.Instance.PretraziSveFrizere();
-				uCIzmenaFrizera.prepareDgv(frizeri);
+				if (frizeri == null || frizeri.Count() == 0)
+				{
+					MessageBox.Show("Sistem nije uspeo da pronadje frizere");
+					return;
+				}
+				else uCIzmenaFrizera.prepareDgv(frizeri);
 			}
 			
 		}

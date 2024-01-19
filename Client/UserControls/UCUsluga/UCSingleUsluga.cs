@@ -18,15 +18,28 @@ namespace Client.UserControls.UCUsluga
         public UCSingleUsluga(UCMode mode,Usluga usluga=null)
 		{
 			InitializeComponent();
+			Usluga = usluga;
 			prepareForm(mode);
-			Usluga=usluga;
 		}
 
 		private void prepareForm(UCMode mode)
 		{
 			if (mode == UCMode.Show)
 			{
+				txtCena.Enabled = false;
+				txtNaziv.Enabled = false;
+				txtTrajanje.Enabled = false;
 				btnSave.Enabled = false;
+
+				txtNaziv.Text = Usluga.NazivUsluge.ToString();
+				txtCena.Text = Usluga.CenaUsluge.ToString();
+				txtTrajanje.Text = Usluga.TrajanjeUslugeUMinutima.ToString();
+			}
+			else if (mode == UCMode.Update)
+			{
+				txtNaziv.Text = Usluga.NazivUsluge.ToString();
+				txtCena.Text = Usluga.CenaUsluge.ToString();
+				txtTrajanje.Text = Usluga.TrajanjeUslugeUMinutima.ToString();
 			}
 		}
 		internal void resetForm()
