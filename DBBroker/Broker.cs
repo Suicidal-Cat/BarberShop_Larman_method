@@ -39,7 +39,7 @@ namespace DBBroker
 		public void Add(IEntity entity)
 		{
 			SqlCommand cmd = connection.CreateCommand();
-			cmd.CommandText = $"INSERT INTO {entity.TableName} values({entity.GetParametres()})";
+			cmd.CommandText = $"INSERT INTO {entity.TableName} VALUES({entity.GetParametres()})";
 			entity.PrepareCommand(cmd);
 			cmd.ExecuteNonQuery();
 			cmd.Dispose();
@@ -57,16 +57,6 @@ namespace DBBroker
 			cmd.CommandText = $"UPDATE {entity.TableName} SET {entity.UpdateQuery()} WHERE {entity.GetByIDQuery()}";
 			cmd.ExecuteNonQuery();
 			cmd.Dispose();
-		}
-		public List<IEntity> ReadAll(IEntity entity)
-		{
-			SqlCommand cmd = connection.CreateCommand();
-			cmd.CommandText = $"SELECT * FROM {entity.TableName}";
-			SqlDataReader reader = cmd.ExecuteReader();
-			List<IEntity>entities= entity.GetReaderList(reader);
-			reader.Close();
-			cmd.Dispose();
-			return entities;
 		}
 
 		public List<IEntity> ReadAllSearch(IEntity entity)
@@ -100,5 +90,25 @@ namespace DBBroker
 			cmd.Dispose();
 			return entity;
 		}
+		public List<IEntity> ReadAll(IEntity entity)
+		{
+			SqlCommand cmd = connection.CreateCommand();
+			cmd.CommandText = $"SELECT * FROM {entity.TableName}";
+			SqlDataReader reader = cmd.ExecuteReader();
+			List<IEntity> entities = entity.GetReaderList(reader);
+			reader.Close();
+			cmd.Dispose();
+			return entities;
+		}
+		public int ReturnIdAdd(IEntity entity)
+		{
+			SqlCommand cmd = connection.CreateCommand();
+			cmd.CommandText = $"INSERT INTO {entity.TableName} OUTPUT INSERTED.{entity.PrimaryKey} VALUES({entity.GetParametres()})";
+			entity.PrepareCommand(cmd);
+			var id=cmd.ExecuteScalar();
+			cmd.Dispose();
+			return (int)id;
+		}
+
 	}
 }

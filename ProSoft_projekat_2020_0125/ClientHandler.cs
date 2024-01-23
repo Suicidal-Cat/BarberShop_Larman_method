@@ -58,7 +58,8 @@ namespace ProSoft_projekat_2020_0125
 						break;
 					case Operation.GetAllServicesSearch:
 						{
-							res.Result = Controller.Instance.SearchAllServices();
+							if(req.Argument!=null && (bool)req.Argument) res.Result = Controller.Instance.SearchAllServices(true);
+							else res.Result = Controller.Instance.SearchAllServices();
 						}
 						break;
 					case Operation.GetAllServicesByName:
@@ -118,7 +119,16 @@ namespace ProSoft_projekat_2020_0125
 							res.Message = "Sistem je uspesno izmenio frizera";
 						}
 						break;
+					case Operation.GetAllCustomers:
+						{
+							res.Result = Controller.Instance.GetAllCustomers();
+						}
+						break;
 					case Operation.MakeCustomerReservation:
+						{
+							Controller.Instance.MakeReservation((List<DetaljiTermina>)req.Argument);
+							res.Message="Termin je rezervisan!";
+						}
 						break;
 					case Operation.UpdateCustomerReservation:
 						break;

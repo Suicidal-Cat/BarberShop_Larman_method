@@ -56,16 +56,16 @@
 			// txtSearch
 			// 
 			this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtSearch.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtSearch.Location = new System.Drawing.Point(357, 87);
 			this.txtSearch.Name = "txtSearch";
-			this.txtSearch.Size = new System.Drawing.Size(190, 28);
+			this.txtSearch.Size = new System.Drawing.Size(190, 33);
 			this.txtSearch.TabIndex = 1;
 			// 
 			// btnSearch
 			// 
 			this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSearch.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSearch.Location = new System.Drawing.Point(553, 75);
 			this.btnSearch.Name = "btnSearch";
 			this.btnSearch.Size = new System.Drawing.Size(147, 48);
@@ -127,17 +127,17 @@
 			// 
 			this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(65, 29);
+			this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(64, 30);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(158, 26);
+			this.label2.Size = new System.Drawing.Size(175, 29);
 			this.label2.TabIndex = 4;
 			this.label2.Text = "Pretraga frizera";
 			// 
 			// btnEdit
 			// 
 			this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnEdit.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnEdit.Location = new System.Drawing.Point(553, 386);
 			this.btnEdit.Name = "btnEdit";
 			this.btnEdit.Size = new System.Drawing.Size(147, 48);
@@ -148,7 +148,7 @@
 			// btnBack
 			// 
 			this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnBack.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnBack.Location = new System.Drawing.Point(68, 386);
 			this.btnBack.Name = "btnBack";
 			this.btnBack.Size = new System.Drawing.Size(147, 48);

@@ -120,5 +120,23 @@ namespace Client
 			sender.Send(request);
 			return (Response)receiver.Receive();
 		}
+		internal List<Musterija> VratiSveMusterije()
+		{
+			Request request = new Request(Operation.GetAllCustomers,null);
+			sender.Send(request);
+			return (List<Musterija>)((Response)receiver.Receive()).Result;
+		}
+		internal List<Usluga> VratiSveUsluge()
+		{
+			Request request = new Request(Operation.GetAllServicesSearch, true);
+			sender.Send(request);
+			return (List<Usluga>)((Response)receiver.Receive()).Result;
+		}
+		internal Response SacuvajTermin(List<DetaljiTermina> termini)
+		{
+			Request request = new Request(Operation.MakeCustomerReservation, termini);
+			sender.Send(request);
+			return (Response)receiver.Receive();
+		}
 	}
 }

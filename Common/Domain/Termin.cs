@@ -22,6 +22,10 @@ namespace Common.Domain
 
 		public string Values => $"'{DatumTermina.ToString("yyyy-MM-dd")}', '{VremePocetka}', '{TrajanjeTerminaUMinutima}', '{UkupnaCena}',"+Frizer==null?null:$"'{Frizer.IdFrizera}'"+ $",'{Musterija.IdMusterije}'";
 
+		public string DisplayValue => DatumTermina.Date.ToString()+" "+Frizer.DisplayValue;
+
+		public string PrimaryKey => "IdTermina";
+
 		public string GetByIDQuery()
 		{
 			return $"IdFrizera={IdTermina}";
@@ -37,7 +41,8 @@ namespace Common.Domain
 			cmd.Parameters.AddWithValue("@VremePocetka", VremePocetka);
 			cmd.Parameters.AddWithValue("@TrajanjeTerminaUMinutima", TrajanjeTerminaUMinutima);
 			cmd.Parameters.AddWithValue("@UkupnaCena", UkupnaCena);
-			cmd.Parameters.AddWithValue("@IdFrizera", Frizer.IdFrizera);
+			if(Frizer!=null) cmd.Parameters.AddWithValue("@IdFrizera", Frizer.IdFrizera);
+			else cmd.Parameters.AddWithValue("@IdFrizera",DBNull.Value);
 			cmd.Parameters.AddWithValue("@IdMusterije", Musterija.IdMusterije);
 		}
 

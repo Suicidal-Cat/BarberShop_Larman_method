@@ -22,6 +22,7 @@ namespace Client
 			dodajUsluguItem.Click += (s, e) => MainCoordinator.Instance.ShowUslugaPanel(UCMode.Add);
 			pretraziUslugeItem.Click += (s, e) => MainCoordinator.Instance.ShowSearchUsluge();
 			dodajNalogMusterijeItem.Click += (s, e) => MainCoordinator.Instance.ShowDodajMusteriju();
+			rezervisiTerminItem.Click += (s, e) => MainCoordinator.Instance.ShowTerminPanel();
 		}
 		public void ChangePanel(Control control)
 		{

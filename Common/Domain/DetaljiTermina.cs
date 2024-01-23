@@ -18,6 +18,10 @@ namespace Common.Domain
 
 		public string Values => $"'{Termin.IdTermina}', '{Usluga.IdUsluge}', '{Napomena}'";
 
+		public string DisplayValue => throw new NotImplementedException();
+
+		public string PrimaryKey => throw new NotImplementedException();
+
 		public string GetByIDQuery()
 		{
 			return $"IdTermina={Termin.IdTermina} AND IdUsluge={Usluga.IdUsluge}";

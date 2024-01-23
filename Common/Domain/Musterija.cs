@@ -19,7 +19,9 @@ namespace Common.Domain
 
 		public string TableName => "Musterija";
 
-		public string Values => $"'{Ime}', '{Prezime}', '{DatumRodjenja.ToString("yyyy-MM-dd")}', '{BrojTelefona}','{Email}'";
+		public string DisplayValue => Ime+" "+Prezime;
+
+		public string PrimaryKey => throw new NotImplementedException();
 
 		public string GetByIDQuery()
 		{
@@ -50,7 +52,7 @@ namespace Common.Domain
 			while (reader.Read())
 			{
 				Musterija musterija = new Musterija() {
-					IdMusterije = (int)reader["IdFrizera"],
+					IdMusterije = (int)reader["IdMusterije"],
 					Ime = (string)reader["Ime"],
 					Prezime = (string)reader["Prezime"],
 					DatumRodjenja = (DateTime)reader["DatumRodjenja"],

@@ -2,6 +2,7 @@
 using ProSoft_projekat_2020_0125.SystemOperation;
 using ProSoft_projekat_2020_0125.SystemOperation.SOFrizer;
 using ProSoft_projekat_2020_0125.SystemOperation.SOMusterija;
+using ProSoft_projekat_2020_0125.SystemOperation.SOTermin;
 using ProSoft_projekat_2020_0125.SystemOperation.SOUsluga;
 using System;
 using System.Collections.Generic;
@@ -59,9 +60,9 @@ namespace ProSoft_projekat_2020_0125
 			KreirajUsluguSO so = new KreirajUsluguSO(usluga);
 			so.ExecuteTemplate();
 		}
-		internal List<Usluga> SearchAllServices()
+		internal List<Usluga> SearchAllServices(bool all = false)
 		{
-			UcitajListuUslugaSO so = new UcitajListuUslugaSO();
+			UcitajListuUslugaSO so = new UcitajListuUslugaSO(all);
 			so.ExecuteTemplate();
 			return so.result.Cast<Usluga>().ToList();
 		}
@@ -91,6 +92,17 @@ namespace ProSoft_projekat_2020_0125
 		internal void AddCustomer(Musterija musterija)
 		{
 			KreirajNalogMusterijeSO so = new KreirajNalogMusterijeSO(musterija);
+			so.ExecuteTemplate();
+		}
+		internal List<Musterija> GetAllCustomers()
+		{
+			UcitajListuMusterijaSO so = new UcitajListuMusterijaSO();
+			so.ExecuteTemplate();
+			return so.Result.Cast<Musterija>().ToList();
+		}
+		internal void MakeReservation(List<DetaljiTermina>detaljiTermina)
+		{
+			KreirajTerminZaMusterijuSO so = new KreirajTerminZaMusterijuSO(detaljiTermina);
 			so.ExecuteTemplate();
 		}
 	}

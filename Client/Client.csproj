@@ -57,6 +57,7 @@
     <Compile Include="GUIControllers\FrizerGUIController.cs" />
     <Compile Include="GUIControllers\MainCoordinator.cs" />
     <Compile Include="GUIControllers\MusterijaGUIController.cs" />
+    <Compile Include="GUIControllers\TerminGUIController.cs" />
     <Compile Include="GUIControllers\UslugaGUIController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +79,12 @@
     </Compile>
     <Compile Include="UserControls\UCMusterija\UCDodajMusteriju.Designer.cs">
       <DependentUpon>UCDodajMusteriju.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCTermin\UCSingleTermin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCTermin\UCSingleTermin.Designer.cs">
+      <DependentUpon>UCSingleTermin.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCUsluga\UCSearchUsluga.cs">
       <SubType>UserControl</SubType>
@@ -111,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCMusterija\UCDodajMusteriju.resx">
       <DependentUpon>UCDodajMusteriju.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCTermin\UCSingleTermin.resx">
+      <DependentUpon>UCSingleTermin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCUsluga\UCSearchUsluga.resx">
       <DependentUpon>UCSearchUsluga.cs</DependentUpon>

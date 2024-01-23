@@ -10,7 +10,8 @@ namespace Common.Domain
 	public interface IEntity
 	{
 		string TableName { get; }
-		string Values { get; }// bez ovoga?
+		string DisplayValue { get; }
+		string PrimaryKey { get; }
 		List<IEntity> GetReaderList(SqlDataReader reader);
 		IEntity GetReaderResult(SqlDataReader reader);
 		string GetParametres();

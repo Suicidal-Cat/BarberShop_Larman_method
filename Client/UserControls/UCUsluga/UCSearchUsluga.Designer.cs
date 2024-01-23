@@ -73,7 +73,7 @@
 			// btnSearch
 			// 
 			this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnSearch.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSearch.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSearch.Location = new System.Drawing.Point(393, 130);
 			this.btnSearch.Name = "btnSearch";
 			this.btnSearch.Size = new System.Drawing.Size(148, 41);
@@ -84,10 +84,10 @@
 			// btnShow
 			// 
 			this.btnShow.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnShow.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnShow.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnShow.Location = new System.Drawing.Point(393, 200);
 			this.btnShow.Name = "btnShow";
-			this.btnShow.Size = new System.Drawing.Size(148, 65);
+			this.btnShow.Size = new System.Drawing.Size(148, 71);
 			this.btnShow.TabIndex = 4;
 			this.btnShow.Text = "Prikazi detalje";
 			this.btnShow.UseVisualStyleBackColor = true;
@@ -95,7 +95,7 @@
 			// btnEdit
 			// 
 			this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnEdit.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnEdit.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnEdit.Location = new System.Drawing.Point(393, 301);
 			this.btnEdit.Name = "btnEdit";
 			this.btnEdit.Size = new System.Drawing.Size(148, 52);
@@ -106,7 +106,7 @@
 			// btnDelete
 			// 
 			this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnDelete.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnDelete.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnDelete.Location = new System.Drawing.Point(393, 395);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(148, 52);
@@ -117,7 +117,7 @@
 			// btnBack
 			// 
 			this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnBack.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnBack.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnBack.Location = new System.Drawing.Point(77, 499);
 			this.btnBack.Name = "btnBack";
 			this.btnBack.Size = new System.Drawing.Size(148, 52);

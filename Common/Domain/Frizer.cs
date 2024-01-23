@@ -22,6 +22,10 @@ namespace Common.Domain
 
 		public string Values => $"'{Ime}', '{Prezime}', '{PolFrizera}', '{BrojTelefona}'";
 
+		public string DisplayValue => throw new NotImplementedException();
+
+		public string PrimaryKey => throw new NotImplementedException();
+
 		public string GetByIDQuery()
 		{
 			return $"IdFrizera={IdFrizera}";

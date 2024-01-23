@@ -17,8 +17,9 @@ namespace Common.Domain
         public int TrajanjeUslugeUMinutima { get; set; }
 
 		public string TableName => "Usluga";
+		public string DisplayValue => NazivUsluge;
 
-		public string Values => $"'{NazivUsluge}', '{CenaUsluge}', '{TrajanjeUslugeUMinutima}'";
+		public string PrimaryKey => throw new NotImplementedException();
 
 		public string GetByIDQuery()
 		{

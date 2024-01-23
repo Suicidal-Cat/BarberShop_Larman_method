@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Client.GUIControllers
 {
@@ -21,16 +22,19 @@ namespace Client.GUIControllers
 			frizerGUIController=new FrizerGUIController();
 			uslugaGUIController=new UslugaGUIController();
 			musterijaGUIController=new MusterijaGUIController();
+			terminGUIController=new TerminGUIController();
 		}
 
 		private FRMMain frmMain;
 		private FrizerGUIController frizerGUIController;
 		private UslugaGUIController uslugaGUIController;
 		private MusterijaGUIController musterijaGUIController;
+		private TerminGUIController terminGUIController;
 
 		internal void ShowFRMMain()
 		{
-
+			Application.EnableVisualStyles();
+			Application.SetCompatibleTextRenderingDefault(false);
 			frmMain = new FRMMain();
 			frmMain.AutoSize = true;
 			frmMain.ShowDialog();
@@ -58,6 +62,10 @@ namespace Client.GUIControllers
 		internal void ShowDodajMusteriju()
 		{
 			frmMain.ChangePanel(musterijaGUIController.CreateUCMusterija());
+		}
+		internal void ShowTerminPanel()
+		{
+			frmMain.ChangePanel(terminGUIController.CreateUCTermin());
 		}
 	}
 }
