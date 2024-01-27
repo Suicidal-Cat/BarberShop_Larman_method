@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace Client.GUIControllers
 {
@@ -19,7 +20,9 @@ namespace Client.GUIControllers
 
 		internal Control CreateUCFrizer(UCMode mode,Frizer frizer=null)
 		{
-			uCFrizer = new UCSingleFrizer(mode,frizer);
+			uCFrizer = new UCSingleFrizer();
+			PrepareFormFrizer(mode,frizer);
+			uCFrizer.txtBrTelfona.MouseClick += PromeniTxtTelefona;
 			if (mode == UCMode.Add)
 			{
 				uCFrizer.btnSacuvajFrizera.Click += DodajFrizera;
@@ -32,6 +35,7 @@ namespace Client.GUIControllers
 			}
 			return uCFrizer;
 		}
+
 		internal Control CreateUCIzmeniFrizera()
 		{
 			uCIzmenaFrizera = new UCIzmeniFrizera();
@@ -46,7 +50,7 @@ namespace Client.GUIControllers
 			if (!ValidationDodajFrizera()) return;
 			Frizer frizer = new Frizer()
 			{
-				IdFrizera = uCFrizer.Frizer.IdFrizera,
+				IdFrizera = int.Parse(uCFrizer.lblIdFrizera.Text.ToString()),
 				Ime = uCFrizer.txtIme.Text.Trim().Replace(" ", ""),
 				Prezime = uCFrizer.txtPrezime.Text.Trim().Replace(" ", ""),
 				PolFrizera = (Pol)uCFrizer.cbPol.SelectedItem,
@@ -58,8 +62,49 @@ namespace Client.GUIControllers
 			MessageBox.Show(res.Message);
 
 		}
+		internal void ResetForm()
+		{
+			uCFrizer.txtIme.BackColor = uCFrizer.txtPrezime.BackColor = uCFrizer.cbPol.BackColor = Color.White;
+			uCFrizer.cbStatus.BackColor = Color.White;
+			uCFrizer.txtIme.Text = uCFrizer.txtPrezime.Text = "";
+			uCFrizer.txtBrTelfona.Text = "+38XXXXXXXXXX";
+			uCFrizer.txtBrTelfona.ForeColor = Color.DarkGray;
+			uCFrizer.cbPol.SelectedIndex = -1;
+		}
+		internal void PrepareFormFrizer(UCMode mode, Frizer frizer = null)
+		{
+			uCFrizer.cbPol.DataSource = Enum.GetValues(typeof(Pol));
+			uCFrizer.cbStatus.DataSource = Enum.GetValues(typeof(Status));
+			uCFrizer.txtDatumZaposlenja.Enabled = false;
+			if (mode == UCMode.Add)
+			{
+				uCFrizer.cbPol.SelectedIndex = -1;
+				uCFrizer.txtBrTelfona.Text = "+38XXXXXXXXXX";
+				uCFrizer.txtBrTelfona.ForeColor = Color.DarkGray;
+				uCFrizer.cbStatus.SelectedIndex = (int)Status.Aktivan;
+				uCFrizer.txtDatumZaposlenja.Text = DateTime.Now.ToString("yyyy-MM-dd");
+				uCFrizer.cbStatus.Enabled = false;
+			}
+			else if (mode == UCMode.Update)
+			{
+				uCFrizer.txtNaslov.Text = "Izmeni frizera";
+				uCFrizer.txtIme.Text = frizer.Ime;
+				uCFrizer.txtPrezime.Text = frizer.Prezime;
+				uCFrizer.txtBrTelfona.Text = frizer.BrojTelefona;
+				uCFrizer.cbPol.SelectedIndex = (int)frizer.PolFrizera;
+				uCFrizer.cbStatus.SelectedIndex = (int)frizer.Status;
+				uCFrizer.txtDatumZaposlenja.Text = frizer.DatumZaposlenja.ToString("yyyy-MM-dd");
 
-		private void PrikaziFormuZaIzmenu(object sender, EventArgs e)
+				uCFrizer.txtBrTelfona.ForeColor = Color.Black;
+				uCFrizer.txtIme.Enabled = false;
+				uCFrizer.cbPol.Enabled = false;
+				uCFrizer.lblIdFrizera.Text = frizer.IdFrizera.ToString();
+
+			}
+		}
+
+
+			private void PrikaziFormuZaIzmenu(object sender, EventArgs e)
 		{
 			if (uCIzmenaFrizera.dgvFrizer.SelectedCells.Count == 1 || uCIzmenaFrizera.dgvFrizer.SelectedRows.Count==1)
 			{
@@ -76,7 +121,7 @@ namespace Client.GUIControllers
 				Frizer f = Communication.Instance.NadjiFrizeraPoId(id);
 				MainCoordinator.Instance.ShowFrizerPanel(UCMode.Update,f);
 			}
-			else uCIzmenaFrizera.ShowMessage("Prvo izaberite red/celiju frizera iz tabele kojeg zelite da promenite");
+			else MessageBox.Show("Prvo izaberite red/celiju frizera iz tabele kojeg zelite da promenite");
 		}
 
 		private void PretraziPoImenuFrizere(object sender, EventArgs e)
@@ -89,7 +134,7 @@ namespace Client.GUIControllers
 					MessageBox.Show("Sistem nije uspeo da pronadje frizere");
 					return;
 				}
-				else uCIzmenaFrizera.prepareDgv(frizeri);
+				else prepareDgv(frizeri);
 			}
 			else
 			{
@@ -99,7 +144,7 @@ namespace Client.GUIControllers
 					MessageBox.Show("Sistem nije uspeo da pronadje frizere");
 					return;
 				}
-				else uCIzmenaFrizera.prepareDgv(frizeri);
+				else prepareDgv(frizeri);
 			}
 			
 		}
@@ -107,7 +152,7 @@ namespace Client.GUIControllers
 		private void PretraziSveFrizere(object sender, EventArgs e)
 		{
 			List<Frizer> frizeri = Communication.Instance.PretraziSveFrizere();
-			uCIzmenaFrizera.prepareDgv(frizeri);
+			prepareDgv(frizeri);
 		}
 
 		
@@ -124,8 +169,8 @@ namespace Client.GUIControllers
 				DatumZaposlenja=DateTime.Parse(uCFrizer.txtDatumZaposlenja.Text),
 			};
 			Response response = Communication.Instance.DodajFrizera(frizer);
-			uCFrizer.ShowMessage(response.Message);
-			uCFrizer.ResetForm();
+			MessageBox.Show(response.Message);
+			ResetForm();
 		}
 		private bool ValidationDodajFrizera()
 		{
@@ -166,10 +211,48 @@ namespace Client.GUIControllers
 
 			if (errors.Count > 0)
 			{
-				uCFrizer.ValidationError(errors, controls);
+				ValidationError(errors, controls);
 				return false;
 			}
 			else return true;
+		}
+		private void ValidationError(List<string> errors, List<Control> controls)
+		{
+			uCFrizer.txtIme.BackColor = Color.White;
+			uCFrizer.txtPrezime.BackColor = Color.White;
+			uCFrizer.cbPol.BackColor = Color.White;
+			uCFrizer.txtBrTelfona.BackColor = Color.White;
+
+			string errorMessage = "";
+			if (errors.Count() == 0) return;
+			for (int i = 0; i < controls.Count(); i++)
+			{
+				errorMessage += errors[i] + "\n";
+				controls[i].BackColor = Color.LightSalmon;
+			}
+
+			MessageBox.Show(errorMessage);
+		}
+		private void PromeniTxtTelefona(object sender, MouseEventArgs e)
+		{
+			if (uCFrizer.txtBrTelfona.ForeColor == Color.DarkGray)
+			{
+				uCFrizer.txtBrTelfona.Text = "";
+				uCFrizer.txtBrTelfona.ForeColor = Color.Black;
+			}
+		}
+		private void prepareDgv(List<Frizer> frizeri)
+		{
+			uCIzmenaFrizera.dgvFrizer.Rows.Clear();
+			if (frizeri != null && frizeri.Count > 0)
+			{
+				foreach (Frizer f in frizeri)
+				{
+					uCIzmenaFrizera.dgvFrizer.Rows.Add(f.IdFrizera.ToString(), f.Ime, f.Prezime, f.Status.ToString());
+				}
+			}
+			else MessageBox.Show("Sistem nije uspeo da nadje frizere po zadatoj vrednosti!");
+
 		}
 	}
 }

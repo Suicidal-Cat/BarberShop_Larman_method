@@ -43,6 +43,7 @@
 			this.label7 = new System.Windows.Forms.Label();
 			this.txtDatumZaposlenja = new System.Windows.Forms.TextBox();
 			this.btnBack = new System.Windows.Forms.Button();
+			this.lblIdFrizera = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// txtIme
@@ -86,7 +87,6 @@
 			this.txtBrTelfona.Name = "txtBrTelfona";
 			this.txtBrTelfona.Size = new System.Drawing.Size(222, 35);
 			this.txtBrTelfona.TabIndex = 3;
-			this.txtBrTelfona.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtBrTelfona_MouseClick);
 			// 
 			// label1
 			// 
@@ -206,10 +206,20 @@
 			this.btnBack.Text = "Nazad";
 			this.btnBack.UseVisualStyleBackColor = true;
 			// 
+			// lblIdFrizera
+			// 
+			this.lblIdFrizera.AutoSize = true;
+			this.lblIdFrizera.Location = new System.Drawing.Point(264, 43);
+			this.lblIdFrizera.Name = "lblIdFrizera";
+			this.lblIdFrizera.Size = new System.Drawing.Size(0, 16);
+			this.lblIdFrizera.TabIndex = 15;
+			this.lblIdFrizera.Visible = false;
+			// 
 			// UCSingleFrizer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.lblIdFrizera);
 			this.Controls.Add(this.btnBack);
 			this.Controls.Add(this.txtDatumZaposlenja);
 			this.Controls.Add(this.label7);
@@ -235,7 +245,6 @@
 		#endregion
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label txtNaslov;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
 		internal System.Windows.Forms.Button btnSacuvajFrizera;
@@ -248,5 +257,7 @@
 		internal System.Windows.Forms.ComboBox cbStatus;
 		internal System.Windows.Forms.TextBox txtDatumZaposlenja;
 		internal System.Windows.Forms.Button btnBack;
+		internal System.Windows.Forms.Label lblIdFrizera;
+		internal System.Windows.Forms.Label txtNaslov;
 	}
 }

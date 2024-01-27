@@ -23,6 +23,7 @@ namespace Client
 			pretraziUslugeItem.Click += (s, e) => MainCoordinator.Instance.ShowSearchUsluge();
 			dodajNalogMusterijeItem.Click += (s, e) => MainCoordinator.Instance.ShowDodajMusteriju();
 			rezervisiTerminItem.Click += (s, e) => MainCoordinator.Instance.ShowTerminPanel();
+			dodeliTerminFrizeruItem.Click += (s, e) => MainCoordinator.Instance.ShowTerminFrizerPanel();
 		}
 		public void ChangePanel(Control control)
 		{

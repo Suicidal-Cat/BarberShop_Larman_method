@@ -3,11 +3,13 @@ using Common.Communication;
 using Common.Domain;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace Client.GUIControllers
 {
@@ -18,9 +20,20 @@ namespace Client.GUIControllers
 		internal Control CreateUCMusterija()
 		{
 			uCDodajMusteriju=new UCDodajMusteriju();
+			prepareFormMusterija();
+			uCDodajMusteriju.txtBrTelfona.MouseClick += PromeniTxtTelefon;
 			uCDodajMusteriju.btnBack.Click += (s, e) => MainCoordinator.Instance.ShowDefault();
 			uCDodajMusteriju.btnSave.Click += SacuvajMusteriju;
 			return uCDodajMusteriju;
+		}
+
+		private void PromeniTxtTelefon(object sender, MouseEventArgs e)
+		{
+			if (uCDodajMusteriju.txtBrTelfona.ForeColor == Color.DarkGray)
+			{
+				uCDodajMusteriju.txtBrTelfona.Text = "";
+				uCDodajMusteriju.txtBrTelfona.ForeColor = Color.Black;
+			}
 		}
 
 		private void SacuvajMusteriju(object sender, EventArgs e)
@@ -36,7 +49,7 @@ namespace Client.GUIControllers
 			};
 			Response res = Communication.Instance.DoadajMusteriju(musterija);
 			MessageBox.Show(res.Message);
-			uCDodajMusteriju.resetForm();
+			resetForm();
 		}
 
 		private bool ValidationMusterija()
@@ -74,10 +87,49 @@ namespace Client.GUIControllers
 
 			if (errors.Count > 0)
 			{
-				uCDodajMusteriju.ShowErrors(errors, controls);
+				ShowErrors(errors, controls);
 				return false;
 			}
 			else return true;
+		}
+		private void prepareFormMusterija()
+		{
+			uCDodajMusteriju.dateTimePicker1.MaxDate = DateTime.Now;
+			DateTime now = new DateTime(DateTime.Now.Year - 120, DateTime.Now.Month, DateTime.Now.Day);
+			uCDodajMusteriju.dateTimePicker1.MinDate = now;
+			uCDodajMusteriju.dateTimePicker1.Value = new DateTime(DateTime.Now.Year - 20, 1, 1);
+			uCDodajMusteriju.txtBrTelfona.Text = "+38XXXXXXXXXX";
+			uCDodajMusteriju.txtBrTelfona.ForeColor = Color.DarkGray;
+		}
+		internal void resetForm()
+		{
+			uCDodajMusteriju.txtIme.BackColor = Color.White;
+			uCDodajMusteriju.txtPrezime.BackColor = Color.White;
+			uCDodajMusteriju.txtBrTelfona.Text = "+38XXXXXXXXXX";
+			uCDodajMusteriju.txtBrTelfona.ForeColor = Color.DarkGray;
+			uCDodajMusteriju.txtEmail.BackColor = Color.White;
+
+			uCDodajMusteriju.txtIme.Text = string.Empty;
+			uCDodajMusteriju.txtBrTelfona.Text = string.Empty;
+			uCDodajMusteriju.txtEmail.Text = string.Empty;
+			uCDodajMusteriju.txtPrezime.Text = string.Empty;
+			uCDodajMusteriju.dateTimePicker1.Value = new DateTime(DateTime.Now.Year - 20, 1, 1);
+		}
+		internal void ShowErrors(List<string> errors, List<Control> controls)
+		{
+			uCDodajMusteriju.txtIme.BackColor = Color.White;
+			uCDodajMusteriju.txtPrezime.BackColor = Color.White;
+			uCDodajMusteriju.txtBrTelfona.BackColor = Color.White;
+			uCDodajMusteriju.txtEmail.BackColor=Color.White;
+
+			string errorMessage = "";
+			if (errors.Count() == 0) return;
+			for (int i = 0; i < controls.Count(); i++)
+			{
+				errorMessage += errors[i] + "\n";
+				controls[i].BackColor = Color.LightSalmon;
+			}
+			MessageBox.Show(errorMessage);
 		}
 	}
 }

@@ -87,7 +87,7 @@ namespace ProSoft_projekat_2020_0125
 					case Operation.CreateCustomer:
 						{
 							Controller.Instance.AddCustomer((Musterija)req.Argument);
-							res.Message = "Sistem je uspesno nalog musterije!";
+							res.Message = "Sistem je uspesno kreirao nalog musterije!";
 						}
 						break;
 					case Operation.CreateBarber:
@@ -130,16 +130,34 @@ namespace ProSoft_projekat_2020_0125
 							res.Message="Termin je rezervisan!";
 						}
 						break;
+					case Operation.GetDetailsByReservation:
+						{
+						res.Result = Controller.Instance.GetDetalisByReservation((Termin)req.Argument);
+					}
+						break;
 					case Operation.UpdateCustomerReservation:
+					{
+						Controller.Instance.ChangeReservationDetails((List<DetaljiTermina>)req.Argument);
+						res.Message = "Sistem je uspesno izmenio termin!";
+					}
 						break;
 					case Operation.AddBarberToReservation:
+						{
+						Controller.Instance.UpdateReservationBarber((Termin)req.Argument);
+							res.Message = "Uspesno dodeljen frizer terminu";
+						}
 						break;
-				}
+					case Operation.GetAllReservationsSearch:
+						{
+							res.Result = Controller.Instance.GetAllReservationsFilter((string)req.Argument);
+                    }
+						break;
 			}
+		}
 			catch (Exception ex)
 			{
-				Debug.WriteLine(">>>>>>>> "+ex.Message);
-				res.Message=ex.Message;
+				Debug.WriteLine(">>>>>>>> " + ex.Message);
+				res.Message = ex.Message;
 			}
 			return res;
 		}

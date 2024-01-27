@@ -37,6 +37,7 @@
 			this.txtTrajanje = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.btnBack = new System.Windows.Forms.Button();
+			this.lblIdUsluge = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// lblUsluga
@@ -133,10 +134,20 @@
 			this.btnBack.Text = "Nazad";
 			this.btnBack.UseVisualStyleBackColor = true;
 			// 
+			// lblIdUsluge
+			// 
+			this.lblIdUsluge.AutoSize = true;
+			this.lblIdUsluge.Location = new System.Drawing.Point(534, 44);
+			this.lblIdUsluge.Name = "lblIdUsluge";
+			this.lblIdUsluge.Size = new System.Drawing.Size(0, 16);
+			this.lblIdUsluge.TabIndex = 10;
+			this.lblIdUsluge.Visible = false;
+			// 
 			// UCSingleUsluga
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.lblIdUsluge);
 			this.Controls.Add(this.btnBack);
 			this.Controls.Add(this.txtTrajanje);
 			this.Controls.Add(this.label3);
@@ -164,5 +175,6 @@
 		internal System.Windows.Forms.TextBox txtTrajanje;
 		internal System.Windows.Forms.Label label3;
 		internal System.Windows.Forms.Button btnBack;
+		internal System.Windows.Forms.Label lblIdUsluge;
 	}
 }

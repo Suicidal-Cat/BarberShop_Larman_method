@@ -39,12 +39,14 @@
 			this.dodajNalogMusterijeItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.TerminMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.rezervisiTerminItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.dodeliTerminFrizeruItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.pnlMain = new System.Windows.Forms.Panel();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
 			// 
+			this.menuStrip1.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FrizerMenuItem,
@@ -53,7 +55,7 @@
             this.TerminMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(813, 30);
+			this.menuStrip1.Size = new System.Drawing.Size(813, 40);
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -63,19 +65,21 @@
             this.dodajFrizeraItem,
             this.izmeniFrizeraItem});
 			this.FrizerMenuItem.Name = "FrizerMenuItem";
-			this.FrizerMenuItem.Size = new System.Drawing.Size(59, 26);
+			this.FrizerMenuItem.Size = new System.Drawing.Size(95, 36);
 			this.FrizerMenuItem.Text = "Frizer";
 			// 
 			// dodajFrizeraItem
 			// 
+			this.dodajFrizeraItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dodajFrizeraItem.Name = "dodajFrizeraItem";
-			this.dodajFrizeraItem.Size = new System.Drawing.Size(223, 26);
+			this.dodajFrizeraItem.Size = new System.Drawing.Size(295, 34);
 			this.dodajFrizeraItem.Text = "Kreiraj nalog frizera";
 			// 
 			// izmeniFrizeraItem
 			// 
+			this.izmeniFrizeraItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.izmeniFrizeraItem.Name = "izmeniFrizeraItem";
-			this.izmeniFrizeraItem.Size = new System.Drawing.Size(223, 26);
+			this.izmeniFrizeraItem.Size = new System.Drawing.Size(295, 34);
 			this.izmeniFrizeraItem.Text = "Izmeni frizera";
 			// 
 			// UslugaMenuItem
@@ -84,19 +88,21 @@
             this.dodajUsluguItem,
             this.pretraziUslugeItem});
 			this.UslugaMenuItem.Name = "UslugaMenuItem";
-			this.UslugaMenuItem.Size = new System.Drawing.Size(68, 26);
+			this.UslugaMenuItem.Size = new System.Drawing.Size(98, 36);
 			this.UslugaMenuItem.Text = "Usluga";
 			// 
 			// dodajUsluguItem
 			// 
+			this.dodajUsluguItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dodajUsluguItem.Name = "dodajUsluguItem";
-			this.dodajUsluguItem.Size = new System.Drawing.Size(189, 26);
+			this.dodajUsluguItem.Size = new System.Drawing.Size(241, 34);
 			this.dodajUsluguItem.Text = "Dodaj uslugu";
 			// 
 			// pretraziUslugeItem
 			// 
+			this.pretraziUslugeItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.pretraziUslugeItem.Name = "pretraziUslugeItem";
-			this.pretraziUslugeItem.Size = new System.Drawing.Size(189, 26);
+			this.pretraziUslugeItem.Size = new System.Drawing.Size(241, 34);
 			this.pretraziUslugeItem.Text = "Pretrazi usluge";
 			// 
 			// MusterijeMenuItem
@@ -104,37 +110,47 @@
 			this.MusterijeMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dodajNalogMusterijeItem});
 			this.MusterijeMenuItem.Name = "MusterijeMenuItem";
-			this.MusterijeMenuItem.Size = new System.Drawing.Size(84, 26);
+			this.MusterijeMenuItem.Size = new System.Drawing.Size(133, 36);
 			this.MusterijeMenuItem.Text = "Musterija";
 			// 
 			// dodajNalogMusterijeItem
 			// 
+			this.dodajNalogMusterijeItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dodajNalogMusterijeItem.Name = "dodajNalogMusterijeItem";
-			this.dodajNalogMusterijeItem.Size = new System.Drawing.Size(242, 26);
+			this.dodajNalogMusterijeItem.Size = new System.Drawing.Size(318, 34);
 			this.dodajNalogMusterijeItem.Text = "Kreiraj nalog musterije";
 			// 
 			// TerminMenuItem
 			// 
 			this.TerminMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rezervisiTerminItem});
+            this.rezervisiTerminItem,
+            this.dodeliTerminFrizeruItem});
 			this.TerminMenuItem.Name = "TerminMenuItem";
-			this.TerminMenuItem.Size = new System.Drawing.Size(68, 26);
+			this.TerminMenuItem.Size = new System.Drawing.Size(104, 36);
 			this.TerminMenuItem.Text = "Termin";
 			// 
 			// rezervisiTerminItem
 			// 
+			this.rezervisiTerminItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.rezervisiTerminItem.Name = "rezervisiTerminItem";
-			this.rezervisiTerminItem.Size = new System.Drawing.Size(197, 26);
+			this.rezervisiTerminItem.Size = new System.Drawing.Size(302, 34);
 			this.rezervisiTerminItem.Text = "Rezervisi termin";
+			// 
+			// dodeliTerminFrizeruItem
+			// 
+			this.dodeliTerminFrizeruItem.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dodeliTerminFrizeruItem.Name = "dodeliTerminFrizeruItem";
+			this.dodeliTerminFrizeruItem.Size = new System.Drawing.Size(302, 34);
+			this.dodeliTerminFrizeruItem.Text = "Dodeli termin frizeru";
 			// 
 			// pnlMain
 			// 
 			this.pnlMain.AutoSize = true;
 			this.pnlMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pnlMain.Location = new System.Drawing.Point(0, 30);
+			this.pnlMain.Location = new System.Drawing.Point(0, 40);
 			this.pnlMain.Name = "pnlMain";
-			this.pnlMain.Size = new System.Drawing.Size(813, 486);
+			this.pnlMain.Size = new System.Drawing.Size(813, 476);
 			this.pnlMain.TabIndex = 1;
 			// 
 			// FRMMain
@@ -145,6 +161,8 @@
 			this.Controls.Add(this.pnlMain);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "FRMMain";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Form1";
@@ -169,6 +187,7 @@
 		private System.Windows.Forms.ToolStripMenuItem dodajNalogMusterijeItem;
 		private System.Windows.Forms.ToolStripMenuItem TerminMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem rezervisiTerminItem;
+		private System.Windows.Forms.ToolStripMenuItem dodeliTerminFrizeruItem;
 	}
 }
 

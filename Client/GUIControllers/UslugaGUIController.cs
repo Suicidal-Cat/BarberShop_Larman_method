@@ -4,6 +4,7 @@ using Common.Communication;
 using Common.Domain;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,10 +17,10 @@ namespace Client.GUIControllers
 		private UCSingleUsluga uCUsluga;
 		private UCSearchUsluga uCSearchUsluga;
 
-
 		internal Control CreateUCUsluga(UCMode mode, Usluga usluga = null)
 		{
-			uCUsluga = new UCSingleUsluga(mode, usluga);
+			uCUsluga = new UCSingleUsluga();
+			PrepareFormUsluga(mode,usluga);
 			if (mode == UCMode.Add)
 			{
 				uCUsluga.btnSave.Click += SacuvajUslugu;
@@ -37,7 +38,7 @@ namespace Client.GUIControllers
 		{
 			Usluga usluga = new Usluga
 			{
-				IdUsluge=uCUsluga.Usluga.IdUsluge,
+				IdUsluge=int.Parse(uCUsluga.lblIdUsluge.Text),
 				NazivUsluge = uCUsluga.txtNaziv.Text.Trim(),
 				CenaUsluge = int.Parse(uCUsluga.txtCena.Text.Trim()),
 				TrajanjeUslugeUMinutima = int.Parse(uCUsluga.txtTrajanje.Text.Trim()),
@@ -97,8 +98,17 @@ namespace Client.GUIControllers
 		{
 			if (uCSearchUsluga.listbUsluge.SelectedItems.Count == 1)
 			{
-				string name = (string)uCSearchUsluga.listbUsluge.SelectedItem;
-				Usluga u = uCSearchUsluga.Usluge.First(usl => usl.NazivUsluge == name);
+				string name = ((ListBoxUsluga)uCSearchUsluga.listbUsluge.SelectedItem).NazivUsluge;
+				/*Usluga u = uCSearchUsluga.Usluge.First(usl => usl.NazivUsluge == name);*/
+				Usluga u=new Usluga();
+				foreach(ListBoxUsluga lb in uCSearchUsluga.listbUsluge.Items)
+				{
+					if (lb.NazivUsluge == name)
+					{
+						u.IdUsluge = lb.IdUsluge;
+						u.NazivUsluge=lb.NazivUsluge;
+					}
+				}
 				return Communication.Instance.NadjiUsluguPoId(u);
 
 			}
@@ -119,12 +129,19 @@ namespace Client.GUIControllers
 					MessageBox.Show("Sistem nije uspeo da pronadje usluge");
 					return;
 				}
-				uCSearchUsluga.Usluge = usluge;
-				uCSearchUsluga.listbUsluge.Items.Clear();
+				uCSearchUsluga.listbUsluge.DataSource = null;
+				List<ListBoxUsluga>listaUsluga= new List<ListBoxUsluga>();
 				foreach (Usluga u in usluge)
 				{
-					uCSearchUsluga.listbUsluge.Items.Add(u.NazivUsluge);
+					ListBoxUsluga lb = new ListBoxUsluga()
+					{
+						IdUsluge=u.IdUsluge,
+						NazivUsluge=u.NazivUsluge,
+					};
+					listaUsluga.Add(lb);
 				}
+				uCSearchUsluga.listbUsluge.DataSource = listaUsluga;
+				uCSearchUsluga.listbUsluge.DisplayMember = "NazivUsluge";
 			}
 		}
 
@@ -136,12 +153,19 @@ namespace Client.GUIControllers
 				MessageBox.Show("Sistem nije uspeo da pronadje usluge");
 				return;
 			}
-			uCSearchUsluga.Usluge = usluge;
-			uCSearchUsluga.listbUsluge.Items.Clear();
+			uCSearchUsluga.listbUsluge.DataSource = null;
+			List<ListBoxUsluga> listaUsluga = new List<ListBoxUsluga>();
 			foreach (Usluga u in usluge)
 			{
-				uCSearchUsluga.listbUsluge.Items.Add(u.NazivUsluge);
+				ListBoxUsluga lb = new ListBoxUsluga()
+				{
+					IdUsluge = u.IdUsluge,
+					NazivUsluge = u.NazivUsluge,
+				};
+				listaUsluga.Add(lb);
 			}
+			uCSearchUsluga.listbUsluge.DataSource = listaUsluga;
+			uCSearchUsluga.listbUsluge.DisplayMember = "NazivUsluge";
 		}
 
 		private void SacuvajUslugu(object sender, EventArgs e)
@@ -155,7 +179,7 @@ namespace Client.GUIControllers
 			};
 			Response res=Communication.Instance.DodajUslugu(usluga);
 			MessageBox.Show(res.Message);
-			uCUsluga.resetForm();
+			ResetForm();
 		}
 
 		internal bool ValidateUsluga()
@@ -181,11 +205,62 @@ namespace Client.GUIControllers
 			}
 			if (errors.Count > 0)
 			{
-				uCUsluga.ShowErrors(errors, controls);
+				ShowErrors(errors, controls);
 				return false;
 			}
 
 			return true;
 		}
+		private void PrepareFormUsluga(UCMode mode, Usluga usluga = null)
+		{
+			if (mode == UCMode.Show)
+			{
+				uCUsluga.txtCena.Enabled = false;
+				uCUsluga.txtNaziv.Enabled = false;
+				uCUsluga.txtTrajanje.Enabled = false;
+				uCUsluga.btnSave.Enabled = false;
+
+				uCUsluga.txtNaziv.Text = usluga.NazivUsluge.ToString();
+				uCUsluga.txtCena.Text = usluga.CenaUsluge.ToString();
+				uCUsluga.txtTrajanje.Text = usluga.TrajanjeUslugeUMinutima.ToString();
+			}
+			else if (mode == UCMode.Update)
+			{
+				uCUsluga.lblIdUsluge.Text = usluga.IdUsluge.ToString();
+				uCUsluga.txtNaziv.Text = usluga.NazivUsluge.ToString();
+				uCUsluga.txtCena.Text = usluga.CenaUsluge.ToString();
+				uCUsluga.txtTrajanje.Text = usluga.TrajanjeUslugeUMinutima.ToString();
+			}
+		}
+		internal void ResetForm()
+		{
+			uCUsluga.txtCena.Text = string.Empty;
+			uCUsluga.txtNaziv.Text = string.Empty;
+			uCUsluga.txtTrajanje.Text = string.Empty;
+			uCUsluga.txtNaziv.BackColor = Color.White;
+			uCUsluga.txtCena.BackColor = Color.White;
+			uCUsluga.txtTrajanje.BackColor = Color.White;
+		}
+		private void ShowErrors(List<string> errors, List<Control> controls)
+		{
+			uCUsluga.txtNaziv.BackColor = Color.White;
+			uCUsluga.txtCena.BackColor = Color.White;
+			uCUsluga.txtTrajanje.BackColor = Color.White;
+
+			string errorMessage = "";
+			if (errors.Count() == 0) return;
+			for (int i = 0; i < controls.Count(); i++)
+			{
+				errorMessage += errors[i] + "\n";
+				controls[i].BackColor = Color.LightSalmon;
+			}
+
+			MessageBox.Show(errorMessage);
+		}
+	}
+	public class ListBoxUsluga
+	{
+		public int IdUsluge { get; set; }
+		public string NazivUsluge { get; set; }
 	}
 }

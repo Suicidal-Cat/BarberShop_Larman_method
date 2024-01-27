@@ -22,7 +22,7 @@ namespace Common.Domain
 
 		public string Values => $"'{Ime}', '{Prezime}', '{PolFrizera}', '{BrojTelefona}'";
 
-		public string DisplayValue => throw new NotImplementedException();
+		public string DisplayValue => Ime+" "+Prezime;
 
 		public string PrimaryKey => throw new NotImplementedException();
 
@@ -113,6 +113,11 @@ namespace Common.Domain
 		public string GetFilterQuery(string filter)
 		{
 			return $"LOWER(Ime) LIKE CONCAT('%',LOWER('{filter}'),'%');";
+		}
+
+		public string JoinQuery()
+		{
+			return "";
 		}
 	}
 }

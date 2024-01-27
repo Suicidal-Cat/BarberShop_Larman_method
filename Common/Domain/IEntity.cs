@@ -17,6 +17,7 @@ namespace Common.Domain
 		string GetParametres();
 		void PrepareCommand(SqlCommand cmd);
 		string UpdateQuery();
+		string JoinQuery();
 		string GetByIDQuery();
 		string GetSearchAttributes();
 		string GetFilterQuery(string filter);

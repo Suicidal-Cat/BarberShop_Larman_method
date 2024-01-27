@@ -65,7 +65,11 @@
     <Compile Include="SystemOperation\SOFrizer\UcitajListuFrizeraSO.cs" />
     <Compile Include="SystemOperation\SOMusterija\KreirajNalogMusterijeSO.cs" />
     <Compile Include="SystemOperation\SOMusterija\UcitajListuMusterijaSO.cs" />
+    <Compile Include="SystemOperation\SOTermin\DodeliFrizeraTerminuSO.cs" />
+    <Compile Include="SystemOperation\SOTermin\IzmeniTerminSO.cs" />
     <Compile Include="SystemOperation\SOTermin\KreirajTerminZaMusterijuSO.cs" />
+    <Compile Include="SystemOperation\SOTermin\NadjiTermineSO.cs" />
+    <Compile Include="SystemOperation\SOTermin\UcitajTerminSO.cs" />
     <Compile Include="SystemOperation\SOUsluga\IzmeniUsluguSO.cs" />
     <Compile Include="SystemOperation\SOUsluga\KreirajUsluguSO.cs" />
     <Compile Include="SystemOperation\SOUsluga\NadjiUslugeSO.cs" />

@@ -62,7 +62,7 @@ namespace DBBroker
 		public List<IEntity> ReadAllSearch(IEntity entity)
 		{
 			SqlCommand cmd = connection.CreateCommand();
-			cmd.CommandText = $"SELECT {entity.GetSearchAttributes()} FROM {entity.TableName}";
+			cmd.CommandText = $"SELECT {entity.GetSearchAttributes()} FROM {entity.TableName} {entity.JoinQuery()}";
 			SqlDataReader reader = cmd.ExecuteReader();
 			List<IEntity>entities= entity.ReadAllSearch(reader);
 			reader.Close();
@@ -73,7 +73,7 @@ namespace DBBroker
 		public List<IEntity> GetAllByFilter(IEntity entity,string filter)
 		{
 			SqlCommand cmd = connection.CreateCommand();
-			cmd.CommandText = $"SELECT {entity.GetSearchAttributes()} FROM {entity.TableName} WHERE {entity.GetFilterQuery(filter)}";
+			cmd.CommandText = $"SELECT {entity.GetSearchAttributes()} FROM {entity.TableName} {entity.JoinQuery()} WHERE {entity.GetFilterQuery(filter)}";
 			SqlDataReader reader = cmd.ExecuteReader();
 			List<IEntity> entities = entity.ReadAllSearch(reader);
 			reader.Close();
@@ -90,16 +90,6 @@ namespace DBBroker
 			cmd.Dispose();
 			return entity;
 		}
-		public List<IEntity> ReadAll(IEntity entity)
-		{
-			SqlCommand cmd = connection.CreateCommand();
-			cmd.CommandText = $"SELECT * FROM {entity.TableName}";
-			SqlDataReader reader = cmd.ExecuteReader();
-			List<IEntity> entities = entity.GetReaderList(reader);
-			reader.Close();
-			cmd.Dispose();
-			return entities;
-		}
 		public int ReturnIdAdd(IEntity entity)
 		{
 			SqlCommand cmd = connection.CreateCommand();
@@ -108,6 +98,16 @@ namespace DBBroker
 			var id=cmd.ExecuteScalar();
 			cmd.Dispose();
 			return (int)id;
+		}
+		public List<IEntity> ReadAll(IEntity entity)
+		{
+			SqlCommand cmd = connection.CreateCommand();
+			cmd.CommandText = $"SELECT * FROM {entity.TableName} {entity.JoinQuery()}";
+			SqlDataReader reader = cmd.ExecuteReader();
+			List<IEntity> entities = entity.GetReaderList(reader);
+			reader.Close();
+			cmd.Dispose();
+			return entities;
 		}
 
 	}

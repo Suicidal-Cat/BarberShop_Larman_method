@@ -100,9 +100,32 @@ namespace ProSoft_projekat_2020_0125
 			so.ExecuteTemplate();
 			return so.Result.Cast<Musterija>().ToList();
 		}
+		//reservations
 		internal void MakeReservation(List<DetaljiTermina>detaljiTermina)
 		{
 			KreirajTerminZaMusterijuSO so = new KreirajTerminZaMusterijuSO(detaljiTermina);
+			so.ExecuteTemplate();
+		}
+		internal List<Termin> GetAllReservationsFilter(string filter)
+		{
+			NadjiTermineSO so = new NadjiTermineSO(filter);
+			so.ExecuteTemplate();
+			return so.result.Cast<Termin>().ToList();
+		}
+		internal void UpdateReservationBarber(Termin t)
+		{
+			DodeliFrizeraTerminuSO so = new DodeliFrizeraTerminuSO(t);
+			so.ExecuteTemplate();
+		}
+		internal List<DetaljiTermina> GetDetalisByReservation(Termin t)
+		{
+			UcitajTerminSO so=new UcitajTerminSO(t);
+			so.ExecuteTemplate();
+			return so.result.Cast<DetaljiTermina>().ToList();
+		}
+		internal void ChangeReservationDetails(List<DetaljiTermina> detaljiTermina)
+		{
+			IzmeniTerminSO so = new IzmeniTerminSO(detaljiTermina);
 			so.ExecuteTemplate();
 		}
 	}

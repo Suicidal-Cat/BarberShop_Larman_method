@@ -98,5 +98,10 @@ namespace Common.Domain
 		{
 			return $"LOWER(NazivUsluge) LIKE CONCAT('%',LOWER('{filter}'),'%');";
 		}
+
+		public string JoinQuery()
+		{
+			return "";
+		}
 	}
 }

@@ -13,7 +13,6 @@ namespace Client.UserControls.UCUsluga
 {
 	public partial class UCSearchUsluga : UserControl
 	{
-		public List<Usluga> Usluge { get; set; }
 		public UCSearchUsluga()
 		{
 			InitializeComponent();

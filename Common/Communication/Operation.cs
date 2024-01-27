@@ -23,7 +23,9 @@ namespace Common.Communication
 		UpdateBarber,
 		GetAllBarbers,//izbrisati sve vezano za ovo,communication, controller
 		GetAllCustomers,
+		GetAllReservationsSearch,
 		MakeCustomerReservation,
+		GetDetailsByReservation,
 		UpdateCustomerReservation,
 		AddBarberToReservation,
 	}

@@ -80,6 +80,12 @@
     <Compile Include="UserControls\UCMusterija\UCDodajMusteriju.Designer.cs">
       <DependentUpon>UCDodajMusteriju.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCTermin\UCDodajFrizeraTerminu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCTermin\UCDodajFrizeraTerminu.Designer.cs">
+      <DependentUpon>UCDodajFrizeraTerminu.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCTermin\UCSingleTermin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCMusterija\UCDodajMusteriju.resx">
       <DependentUpon>UCDodajMusteriju.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCTermin\UCDodajFrizeraTerminu.resx">
+      <DependentUpon>UCDodajFrizeraTerminu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCTermin\UCSingleTermin.resx">
       <DependentUpon>UCSingleTermin.cs</DependentUpon>

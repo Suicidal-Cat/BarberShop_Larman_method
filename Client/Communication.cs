@@ -138,5 +138,29 @@ namespace Client
 			sender.Send(request);
 			return (Response)receiver.Receive();
 		}
+		internal List<Termin> PretraziSveTerminePoDatumu(string date)
+		{
+			Request request = new Request(Operation.GetAllReservationsSearch,date);
+			sender.Send(request);
+			return (List<Termin>)((Response)receiver.Receive()).Result;
+		}
+		internal Response DodeliFrizeraTerminu(Termin t)
+		{
+			Request request = new Request(Operation.AddBarberToReservation, t);
+			sender.Send(request);
+			return (Response)receiver.Receive();
+		}
+		internal List<DetaljiTermina> VratiDetaljeTermina(Termin t)
+		{
+			Request request = new Request(Operation.GetDetailsByReservation, t);
+			sender.Send(request);
+			return (List<DetaljiTermina>)((Response)receiver.Receive()).Result;
+		}
+		internal Response IzmeniTermin(List<DetaljiTermina> termini)
+		{
+			Request request = new Request(Operation.UpdateCustomerReservation, termini);
+			sender.Send(request);
+			return (Response)receiver.Receive();
+		}
 	}
 }

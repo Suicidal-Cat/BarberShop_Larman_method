@@ -96,5 +96,16 @@ namespace Common.Domain
 		{
 			throw new NotImplementedException();
 		}
+
+		public string JoinQuery()
+		{
+			return "";
+		}
+
+		public override bool Equals(object obj)
+		{
+			return obj is Musterija musterija &&
+				   IdMusterije == musterija.IdMusterije;
+		}
 	}
 }

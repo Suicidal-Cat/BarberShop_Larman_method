@@ -57,6 +57,9 @@
 			this.Cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Trajanje = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Napomena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Izbrisi = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.txtIdTermina = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.hoursCounter)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.minutesCounter)).BeginInit();
 			this.groupBox1.SuspendLayout();
@@ -67,10 +70,10 @@
 			// 
 			this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(72, 13);
+			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(49, 14);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(207, 29);
+			this.label1.Size = new System.Drawing.Size(236, 32);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Rezervacija termina";
 			// 
@@ -78,7 +81,7 @@
 			// 
 			this.monthCalendar.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.monthCalendar.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.monthCalendar.Location = new System.Drawing.Point(77, 98);
+			this.monthCalendar.Location = new System.Drawing.Point(54, 99);
 			this.monthCalendar.MaxSelectionCount = 1;
 			this.monthCalendar.Name = "monthCalendar";
 			this.monthCalendar.TabIndex = 1;
@@ -88,7 +91,7 @@
 			this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(77, 66);
+			this.label2.Location = new System.Drawing.Point(54, 67);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(136, 24);
 			this.label2.TabIndex = 2;
@@ -99,7 +102,7 @@
 			this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(617, 162);
+			this.label4.Location = new System.Drawing.Point(594, 163);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(36, 24);
 			this.label4.TabIndex = 5;
@@ -109,7 +112,7 @@
 			// 
 			this.hoursCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.hoursCounter.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.hoursCounter.Location = new System.Drawing.Point(468, 160);
+			this.hoursCounter.Location = new System.Drawing.Point(445, 161);
 			this.hoursCounter.Name = "hoursCounter";
 			this.hoursCounter.Size = new System.Drawing.Size(67, 31);
 			this.hoursCounter.TabIndex = 8;
@@ -119,7 +122,7 @@
 			this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(536, 162);
+			this.label3.Location = new System.Drawing.Point(513, 163);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(19, 24);
 			this.label3.TabIndex = 4;
@@ -129,7 +132,7 @@
 			// 
 			this.minutesCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.minutesCounter.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.minutesCounter.Location = new System.Drawing.Point(552, 160);
+			this.minutesCounter.Location = new System.Drawing.Point(529, 161);
 			this.minutesCounter.Name = "minutesCounter";
 			this.minutesCounter.Size = new System.Drawing.Size(69, 31);
 			this.minutesCounter.TabIndex = 9;
@@ -143,7 +146,7 @@
 			this.groupBox1.Controls.Add(this.btnDodajUslugu);
 			this.groupBox1.Controls.Add(this.cbUsluge);
 			this.groupBox1.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox1.Location = new System.Drawing.Point(77, 317);
+			this.groupBox1.Location = new System.Drawing.Point(54, 318);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(635, 340);
 			this.groupBox1.TabIndex = 10;
@@ -178,8 +181,10 @@
             this.NazivUsluge,
             this.Cena,
             this.Trajanje,
-            this.Napomena});
-			this.dgvUsluge.Location = new System.Drawing.Point(6, 158);
+            this.Napomena,
+            this.Status,
+            this.Izbrisi});
+			this.dgvUsluge.Location = new System.Drawing.Point(6, 156);
 			this.dgvUsluge.MultiSelect = false;
 			this.dgvUsluge.Name = "dgvUsluge";
 			this.dgvUsluge.ReadOnly = true;
@@ -191,9 +196,9 @@
 			// btnDodajUslugu
 			// 
 			this.btnDodajUslugu.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnDodajUslugu.Location = new System.Drawing.Point(383, 94);
+			this.btnDodajUslugu.Location = new System.Drawing.Point(377, 94);
 			this.btnDodajUslugu.Name = "btnDodajUslugu";
-			this.btnDodajUslugu.Size = new System.Drawing.Size(246, 58);
+			this.btnDodajUslugu.Size = new System.Drawing.Size(252, 58);
 			this.btnDodajUslugu.TabIndex = 1;
 			this.btnDodajUslugu.Text = "Dodaj uslugu";
 			this.btnDodajUslugu.UseVisualStyleBackColor = true;
@@ -210,7 +215,7 @@
 			// 
 			this.btnSacuvaj.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnSacuvaj.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSacuvaj.Location = new System.Drawing.Point(416, 659);
+			this.btnSacuvaj.Location = new System.Drawing.Point(393, 660);
 			this.btnSacuvaj.Name = "btnSacuvaj";
 			this.btnSacuvaj.Size = new System.Drawing.Size(290, 48);
 			this.btnSacuvaj.TabIndex = 11;
@@ -221,7 +226,7 @@
 			// 
 			this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnBack.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnBack.Location = new System.Drawing.Point(77, 659);
+			this.btnBack.Location = new System.Drawing.Point(54, 660);
 			this.btnBack.Name = "btnBack";
 			this.btnBack.Size = new System.Drawing.Size(87, 48);
 			this.btnBack.TabIndex = 12;
@@ -233,7 +238,7 @@
 			this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(392, 162);
+			this.label6.Location = new System.Drawing.Point(369, 163);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(70, 24);
 			this.label6.TabIndex = 13;
@@ -244,7 +249,7 @@
 			this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label7.Location = new System.Drawing.Point(392, 223);
+			this.label7.Location = new System.Drawing.Point(369, 224);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(117, 24);
 			this.label7.TabIndex = 14;
@@ -255,7 +260,7 @@
 			this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label8.AutoSize = true;
 			this.label8.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.Location = new System.Drawing.Point(392, 273);
+			this.label8.Location = new System.Drawing.Point(369, 274);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(142, 24);
 			this.label8.TabIndex = 15;
@@ -265,7 +270,7 @@
 			// 
 			this.txtCena.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtCena.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtCena.Location = new System.Drawing.Point(540, 220);
+			this.txtCena.Location = new System.Drawing.Point(517, 221);
 			this.txtCena.Name = "txtCena";
 			this.txtCena.Size = new System.Drawing.Size(81, 33);
 			this.txtCena.TabIndex = 16;
@@ -274,7 +279,7 @@
 			// 
 			this.txtVreme.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtVreme.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtVreme.Location = new System.Drawing.Point(540, 270);
+			this.txtVreme.Location = new System.Drawing.Point(517, 271);
 			this.txtVreme.Name = "txtVreme";
 			this.txtVreme.Size = new System.Drawing.Size(81, 33);
 			this.txtVreme.TabIndex = 17;
@@ -284,7 +289,7 @@
 			this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label9.AutoSize = true;
 			this.label9.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label9.Location = new System.Drawing.Point(626, 223);
+			this.label9.Location = new System.Drawing.Point(603, 224);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(45, 24);
 			this.label9.TabIndex = 18;
@@ -295,7 +300,7 @@
 			this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label10.AutoSize = true;
 			this.label10.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label10.Location = new System.Drawing.Point(392, 109);
+			this.label10.Location = new System.Drawing.Point(369, 110);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(96, 24);
 			this.label10.TabIndex = 19;
@@ -306,7 +311,7 @@
 			this.cbMusterije.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.cbMusterije.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cbMusterije.FormattingEnabled = true;
-			this.cbMusterije.Location = new System.Drawing.Point(494, 106);
+			this.cbMusterije.Location = new System.Drawing.Point(471, 107);
 			this.cbMusterije.Name = "cbMusterije";
 			this.cbMusterije.Size = new System.Drawing.Size(168, 32);
 			this.cbMusterije.TabIndex = 20;
@@ -316,7 +321,7 @@
 			this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label11.AutoSize = true;
 			this.label11.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label11.Location = new System.Drawing.Point(626, 273);
+			this.label11.Location = new System.Drawing.Point(603, 274);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(36, 24);
 			this.label11.TabIndex = 21;
@@ -329,7 +334,7 @@
 			this.IdUsluge.Name = "IdUsluge";
 			this.IdUsluge.ReadOnly = true;
 			this.IdUsluge.Visible = false;
-			this.IdUsluge.Width = 125;
+			this.IdUsluge.Width = 116;
 			// 
 			// NazivUsluge
 			// 
@@ -363,10 +368,37 @@
 			this.Napomena.ReadOnly = true;
 			this.Napomena.Width = 123;
 			// 
+			// Status
+			// 
+			this.Status.HeaderText = "Status";
+			this.Status.MinimumWidth = 6;
+			this.Status.Name = "Status";
+			this.Status.ReadOnly = true;
+			this.Status.Width = 94;
+			// 
+			// Izbrisi
+			// 
+			this.Izbrisi.HeaderText = "";
+			this.Izbrisi.MinimumWidth = 6;
+			this.Izbrisi.Name = "Izbrisi";
+			this.Izbrisi.ReadOnly = true;
+			this.Izbrisi.Text = "Izbrisi";
+			this.Izbrisi.Width = 6;
+			// 
+			// txtIdTermina
+			// 
+			this.txtIdTermina.AutoSize = true;
+			this.txtIdTermina.Location = new System.Drawing.Point(4, 122);
+			this.txtIdTermina.Name = "txtIdTermina";
+			this.txtIdTermina.Size = new System.Drawing.Size(0, 16);
+			this.txtIdTermina.TabIndex = 22;
+			this.txtIdTermina.Visible = false;
+			// 
 			// UCSingleTermin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.txtIdTermina);
 			this.Controls.Add(this.label11);
 			this.Controls.Add(this.cbMusterije);
 			this.Controls.Add(this.label10);
@@ -428,5 +460,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Cena;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Trajanje;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Napomena;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+		private System.Windows.Forms.DataGridViewButtonColumn Izbrisi;
+		internal System.Windows.Forms.Label txtIdTermina;
 	}
 }

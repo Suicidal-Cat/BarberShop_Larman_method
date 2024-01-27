@@ -107,7 +107,6 @@
 			this.txtBrTelfona.Name = "txtBrTelfona";
 			this.txtBrTelfona.Size = new System.Drawing.Size(366, 35);
 			this.txtBrTelfona.TabIndex = 10;
-			this.txtBrTelfona.Click += new System.EventHandler(this.txtBrTelfona_Click);
 			// 
 			// label3
 			// 

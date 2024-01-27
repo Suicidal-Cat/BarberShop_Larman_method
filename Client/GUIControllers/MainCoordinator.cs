@@ -63,9 +63,13 @@ namespace Client.GUIControllers
 		{
 			frmMain.ChangePanel(musterijaGUIController.CreateUCMusterija());
 		}
-		internal void ShowTerminPanel()
+		internal void ShowTerminPanel(UCMode mode = UCMode.Add, List<DetaljiTermina> dtTer = null)
 		{
-			frmMain.ChangePanel(terminGUIController.CreateUCTermin());
+			frmMain.ChangePanel(terminGUIController.CreateUCTermin(mode,dtTer));
+		}
+		internal void ShowTerminFrizerPanel()
+		{
+			frmMain.ChangePanel(terminGUIController.CreateUCDodajFrizeraTerminu());
 		}
 	}
 }
