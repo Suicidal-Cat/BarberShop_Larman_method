@@ -20,11 +20,9 @@ namespace Common.Domain
 
         public string TableName => "Frizer";
 
-		public string Values => $"'{Ime}', '{Prezime}', '{PolFrizera}', '{BrojTelefona}'";
-
 		public string DisplayValue => Ime+" "+Prezime;
 
-		public string PrimaryKey => throw new NotImplementedException();
+		public string PrimaryKey => "IdFrizera";
 
 		public string GetByIDQuery()
 		{

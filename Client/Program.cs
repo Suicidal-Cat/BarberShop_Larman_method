@@ -15,8 +15,7 @@ namespace Client
 		[STAThread]
 		static void Main()
 		{
-			Communication.Instance.Connect();
-			MainCoordinator.Instance.ShowFRMMain();
+			LoginGUIController.Instance.ShowFrmLogin();
 		}
 	}
 }

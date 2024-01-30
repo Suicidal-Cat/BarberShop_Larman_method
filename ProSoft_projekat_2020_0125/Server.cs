@@ -8,12 +8,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Diagnostics;
+using System.Net.NetworkInformation;
 
 namespace ProSoft_projekat_2020_0125
 {
 	public class Server
 	{
 		Socket socket;
+		public static List<ClientHandler> clients=new List<ClientHandler>();
         public Server()
         {
 			socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -38,6 +40,7 @@ namespace ProSoft_projekat_2020_0125
 				{
 					Socket klijentskiSoket = socket.Accept();
 					ClientHandler handler = new ClientHandler(klijentskiSoket);
+					clients.Add(handler);
 					Thread klijentskaNit = new Thread(handler.HandleRequest);
 					klijentskaNit.IsBackground = true;
 					klijentskaNit.Start();
@@ -45,13 +48,15 @@ namespace ProSoft_projekat_2020_0125
 			}
 			catch (Exception ex)
 			{
-				Debug.WriteLine(ex.Message);
+				Debug.WriteLine(">>>>>>>>"+ex.Message);
+				Stop();
 			}
 		}
 
-
 		public void Stop()
 		{
+			foreach (ClientHandler handler in clients) handler.Close();
+			clients.Clear();
 			socket?.Close();
 		}
 	}

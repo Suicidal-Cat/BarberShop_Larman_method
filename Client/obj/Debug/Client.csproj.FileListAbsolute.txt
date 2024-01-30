@@ -18,3 +18,5 @@ C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.UserControls.UCUsluga.UCSe
 C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.UserControls.UCMusterija.UCDodajMusteriju.resources
 C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.UserControls.UCTermin.UCSingleTermin.resources
 C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.UserControls.UCTermin.UCDodajFrizeraTerminu.resources
+C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.Forms.FRMLogin.resources
+C:\Users\darek\Desktop\Server\Client\obj\Debug\Client.UserControls.UCDefaultMain.resources

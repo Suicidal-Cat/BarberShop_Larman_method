@@ -58,6 +58,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server.cs" />
+    <Compile Include="SystemOperation\SOLogin\LoginSO.cs" />
     <Compile Include="SystemOperation\SOFrizer\IzmeniFrizeraSO.cs" />
     <Compile Include="SystemOperation\SOFrizer\KreirajNalogFrizeraSO.cs" />
     <Compile Include="SystemOperation\SOFrizer\NadjiFrizereSO.cs" />
@@ -112,5 +113,6 @@
       <Name>DBBroker</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

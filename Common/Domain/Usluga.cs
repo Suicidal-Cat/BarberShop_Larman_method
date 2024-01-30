@@ -19,7 +19,7 @@ namespace Common.Domain
 		public string TableName => "Usluga";
 		public string DisplayValue => NazivUsluge;
 
-		public string PrimaryKey => throw new NotImplementedException();
+		public string PrimaryKey => "IdUsluge";
 
 		public string GetByIDQuery()
 		{

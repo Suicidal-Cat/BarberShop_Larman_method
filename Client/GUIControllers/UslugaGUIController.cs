@@ -67,6 +67,7 @@ namespace Client.GUIControllers
 				MessageBox.Show("Izaberite neku od usluga iz liste");
 				return;
 			}
+			if(MessageBox.Show("Jel ste sigurni da zelite da izbrisite uslugu?", "Brisanje usluge",MessageBoxButtons.YesNo)==DialogResult.No)return;
 			Response res=Communication.Instance.IzbrisiUslugu(usluga);
 			uCSearchUsluga.btnSearch.PerformClick();
 			MessageBox.Show(res.Message);
@@ -195,7 +196,7 @@ namespace Client.GUIControllers
 			}
 			if(string.IsNullOrEmpty(uCUsluga.txtCena.Text) || !int.TryParse(uCUsluga.txtCena.Text,out int cena) || cena<=0)
 			{
-				errors.Add("Cena mora biti pozitivna i predstavljati broj!");
+				errors.Add("Cena mora biti pozitivna i predstavljati ceo broj!");
 				controls.Add(uCUsluga.txtCena);
 			}
 			if (string.IsNullOrEmpty(uCUsluga.txtTrajanje.Text) || !int.TryParse(uCUsluga.txtTrajanje.Text, out int trajanje) || trajanje <= 0)

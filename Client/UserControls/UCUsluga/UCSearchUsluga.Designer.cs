@@ -41,98 +41,130 @@
 			// 
 			// listbUsluge
 			// 
-			this.listbUsluge.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.listbUsluge.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.listbUsluge.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.listbUsluge.BackColor = System.Drawing.Color.BlanchedAlmond;
+			this.listbUsluge.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.listbUsluge.ForeColor = System.Drawing.Color.Sienna;
 			this.listbUsluge.FormattingEnabled = true;
-			this.listbUsluge.ItemHeight = 28;
-			this.listbUsluge.Location = new System.Drawing.Point(77, 181);
+			this.listbUsluge.ItemHeight = 31;
+			this.listbUsluge.Location = new System.Drawing.Point(82, 241);
 			this.listbUsluge.Name = "listbUsluge";
-			this.listbUsluge.Size = new System.Drawing.Size(294, 312);
+			this.listbUsluge.Size = new System.Drawing.Size(376, 283);
 			this.listbUsluge.TabIndex = 0;
 			// 
 			// label1
 			// 
-			this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(73, 93);
+			this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(77, 155);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(304, 28);
+			this.label1.Size = new System.Drawing.Size(300, 26);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Unesite ime usluge za pretragu:";
 			// 
 			// txtSearch
 			// 
-			this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.txtSearch.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtSearch.Location = new System.Drawing.Point(77, 133);
+			this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txtSearch.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtSearch.Location = new System.Drawing.Point(82, 193);
 			this.txtSearch.Name = "txtSearch";
-			this.txtSearch.Size = new System.Drawing.Size(294, 35);
+			this.txtSearch.Size = new System.Drawing.Size(376, 34);
 			this.txtSearch.TabIndex = 2;
 			// 
 			// btnSearch
 			// 
-			this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnSearch.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSearch.Location = new System.Drawing.Point(393, 130);
+			this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnSearch.BackColor = System.Drawing.Color.BlanchedAlmond;
+			this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.Brown;
+			this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.NavajoWhite;
+			this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.NavajoWhite;
+			this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnSearch.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSearch.ForeColor = System.Drawing.Color.Sienna;
+			this.btnSearch.Location = new System.Drawing.Point(489, 193);
 			this.btnSearch.Name = "btnSearch";
-			this.btnSearch.Size = new System.Drawing.Size(148, 41);
+			this.btnSearch.Size = new System.Drawing.Size(266, 41);
 			this.btnSearch.TabIndex = 3;
 			this.btnSearch.Text = "Pretrazi";
-			this.btnSearch.UseVisualStyleBackColor = true;
+			this.btnSearch.UseVisualStyleBackColor = false;
 			// 
 			// btnShow
 			// 
-			this.btnShow.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnShow.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnShow.Location = new System.Drawing.Point(393, 200);
+			this.btnShow.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnShow.BackColor = System.Drawing.Color.BlanchedAlmond;
+			this.btnShow.FlatAppearance.BorderColor = System.Drawing.Color.Brown;
+			this.btnShow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.NavajoWhite;
+			this.btnShow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.NavajoWhite;
+			this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnShow.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnShow.ForeColor = System.Drawing.Color.Sienna;
+			this.btnShow.Location = new System.Drawing.Point(489, 269);
 			this.btnShow.Name = "btnShow";
-			this.btnShow.Size = new System.Drawing.Size(148, 71);
+			this.btnShow.Size = new System.Drawing.Size(266, 53);
 			this.btnShow.TabIndex = 4;
 			this.btnShow.Text = "Prikazi detalje";
-			this.btnShow.UseVisualStyleBackColor = true;
+			this.btnShow.UseVisualStyleBackColor = false;
 			// 
 			// btnEdit
 			// 
-			this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnEdit.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnEdit.Location = new System.Drawing.Point(393, 301);
+			this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnEdit.BackColor = System.Drawing.Color.BlanchedAlmond;
+			this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.Brown;
+			this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.NavajoWhite;
+			this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.NavajoWhite;
+			this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnEdit.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnEdit.ForeColor = System.Drawing.Color.Sienna;
+			this.btnEdit.Location = new System.Drawing.Point(489, 361);
 			this.btnEdit.Name = "btnEdit";
-			this.btnEdit.Size = new System.Drawing.Size(148, 52);
+			this.btnEdit.Size = new System.Drawing.Size(266, 52);
 			this.btnEdit.TabIndex = 5;
 			this.btnEdit.Text = "Izmeni";
-			this.btnEdit.UseVisualStyleBackColor = true;
+			this.btnEdit.UseVisualStyleBackColor = false;
 			// 
 			// btnDelete
 			// 
-			this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnDelete.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnDelete.Location = new System.Drawing.Point(393, 395);
+			this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnDelete.BackColor = System.Drawing.Color.BlanchedAlmond;
+			this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.Brown;
+			this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.NavajoWhite;
+			this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.NavajoWhite;
+			this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnDelete.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnDelete.ForeColor = System.Drawing.Color.Sienna;
+			this.btnDelete.Location = new System.Drawing.Point(489, 455);
 			this.btnDelete.Name = "btnDelete";
-			this.btnDelete.Size = new System.Drawing.Size(148, 52);
+			this.btnDelete.Size = new System.Drawing.Size(266, 52);
 			this.btnDelete.TabIndex = 6;
 			this.btnDelete.Text = "Izbrisi";
-			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.UseVisualStyleBackColor = false;
 			// 
 			// btnBack
 			// 
-			this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnBack.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnBack.Location = new System.Drawing.Point(77, 499);
+			this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnBack.BackColor = System.Drawing.Color.BlanchedAlmond;
+			this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Brown;
+			this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.NavajoWhite;
+			this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.NavajoWhite;
+			this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnBack.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnBack.ForeColor = System.Drawing.Color.Sienna;
+			this.btnBack.Location = new System.Drawing.Point(98, 542);
 			this.btnBack.Name = "btnBack";
 			this.btnBack.Size = new System.Drawing.Size(148, 52);
 			this.btnBack.TabIndex = 7;
 			this.btnBack.Text = "Nazad";
-			this.btnBack.UseVisualStyleBackColor = true;
+			this.btnBack.UseVisualStyleBackColor = false;
 			// 
 			// label2
 			// 
-			this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(71, 32);
+			this.label2.Font = new System.Drawing.Font("Comic Sans MS", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.ForeColor = System.Drawing.Color.Sienna;
+			this.label2.Location = new System.Drawing.Point(15, 20);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(237, 32);
+			this.label2.Size = new System.Drawing.Size(293, 40);
 			this.label2.TabIndex = 8;
 			this.label2.Text = "Pretrazivanje usluga";
 			// 
@@ -150,7 +182,7 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.listbUsluge);
 			this.Name = "UCSearchUsluga";
-			this.Size = new System.Drawing.Size(615, 569);
+			this.Size = new System.Drawing.Size(808, 620);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

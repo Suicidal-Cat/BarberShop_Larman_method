@@ -1,5 +1,6 @@
 ﻿using Common.Domain;
 using ProSoft_projekat_2020_0125.SystemOperation;
+using ProSoft_projekat_2020_0125.SystemOperation.Login;
 using ProSoft_projekat_2020_0125.SystemOperation.SOFrizer;
 using ProSoft_projekat_2020_0125.SystemOperation.SOMusterija;
 using ProSoft_projekat_2020_0125.SystemOperation.SOTermin;
@@ -25,6 +26,14 @@ namespace ProSoft_projekat_2020_0125
 			}
 		}
 		private Controller() { }
+
+		//Login
+		internal Korisnik Login(Korisnik k)
+		{
+			LoginSO so=new LoginSO(k);
+			so.ExecuteTemplate();
+			return (Korisnik)so.result;
+		}
 
 		//barbers
 		internal void AddBarber(Frizer f)

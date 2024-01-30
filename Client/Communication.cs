@@ -38,6 +38,10 @@ namespace Client
 			}
 		
 		}
+		public void Close()
+		{
+			socket?.Close();
+		}
 
 		public Response DodajFrizera(Frizer frizer)
 		{
@@ -161,6 +165,17 @@ namespace Client
 			Request request = new Request(Operation.UpdateCustomerReservation, termini);
 			sender.Send(request);
 			return (Response)receiver.Receive();
+		}
+		internal Korisnik Login(string username, string password)
+		{
+			Korisnik korisnik = new Korisnik
+			{
+				Username = username,
+				Password = password
+			};
+			Request request = new Request(Operation.Login,korisnik);
+			sender.Send(request);
+			return (Korisnik)((Response)receiver.Receive()).Result;
 		}
 	}
 }

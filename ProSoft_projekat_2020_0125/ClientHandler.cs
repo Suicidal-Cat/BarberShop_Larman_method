@@ -36,9 +36,11 @@ namespace ProSoft_projekat_2020_0125
 					sender.Send(r);
 				}
 			}
-			catch (IOException ex)
+			catch (Exception ex)
 			{
 				Debug.WriteLine(">>>>>>"+ ex.Message);
+				Server.clients.Remove(this);
+				socket.Close();
 			}
 			
 		}
@@ -50,6 +52,11 @@ namespace ProSoft_projekat_2020_0125
 			{
 				switch (req.Operation)
 				{
+					case Operation.Login:
+						{
+							res.Result = Controller.Instance.Login((Korisnik)req.Argument);
+						}
+						break;
 					case Operation.CreateService:
 						{
 							Controller.Instance.AddService((Usluga)req.Argument);
@@ -95,8 +102,6 @@ namespace ProSoft_projekat_2020_0125
 							Controller.Instance.AddBarber((Frizer)req.Argument);
 							res.Message = "Sistem je uspesno kreirao nalog frizera!";
 						}
-						break;
-					case Operation.GetAllBarbers:
 						break;
 					case Operation.GetAllBarbersSearch:
 						{
@@ -161,6 +166,9 @@ namespace ProSoft_projekat_2020_0125
 			}
 			return res;
 		}
-
+		public void Close()
+		{
+			socket?.Close();
+		}
 	}
 }

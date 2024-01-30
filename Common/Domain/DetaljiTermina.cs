@@ -16,9 +16,9 @@ namespace Common.Domain
         public string Napomena { get; set; }
 
 		public string TableName => "DetaljiTermina";
-		public string DisplayValue => throw new NotImplementedException();
+		public string DisplayValue => "";
 
-		public string PrimaryKey => throw new NotImplementedException();
+		public string PrimaryKey => "IdTermina,IdUsluga";
         public string Status { get; set; }
 
         public string GetByIDQuery()

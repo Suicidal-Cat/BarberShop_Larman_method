@@ -31,12 +31,11 @@ namespace Client.GUIControllers
 		private MusterijaGUIController musterijaGUIController;
 		private TerminGUIController terminGUIController;
 
-		internal void ShowFRMMain()
+		internal void ShowFRMMain(string uloga="Vlasnik")
 		{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			frmMain = new FRMMain();
+			frmMain = new FRMMain(uloga);
 			frmMain.AutoSize = true;
+			ShowDefault();
 			frmMain.ShowDialog();
 		}
 		internal void ShowFrizerPanel(UCMode mode,Frizer frizer=null)
@@ -49,7 +48,9 @@ namespace Client.GUIControllers
 		}
 		internal void ShowDefault()
 		{
-			frmMain.pnlMain.Controls.Clear();
+			UCDefaultMain main = new UCDefaultMain();
+			main.btnRezervisi.Click += (s, e) => ShowTerminPanel();
+			frmMain.ChangePanel(main);
 		}
 		internal void ShowUslugaPanel(UCMode mode, Usluga usluga = null)
 		{

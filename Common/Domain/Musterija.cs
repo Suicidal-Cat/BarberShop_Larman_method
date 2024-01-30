@@ -21,7 +21,7 @@ namespace Common.Domain
 
 		public string DisplayValue => Ime+" "+Prezime;
 
-		public string PrimaryKey => throw new NotImplementedException();
+		public string PrimaryKey => "IdMusterije";
 
 		public string GetByIDQuery()
 		{

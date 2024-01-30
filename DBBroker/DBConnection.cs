@@ -22,6 +22,7 @@ namespace DBBroker
 
 		public void CloseConnection()
 		{
+			transaction?.Dispose();
 			connection?.Close();
 		}
 
